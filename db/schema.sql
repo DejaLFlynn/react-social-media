@@ -12,7 +12,7 @@ CREATE TABLE users (
    id serial Primary Key,
    fullname text,
    username text Not Null unique,
-   email text NOT NULL unique,
+   email text NOT NULL UNIQUE,
    age Int,
    profile_pic varchar
 );
