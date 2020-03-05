@@ -10,8 +10,10 @@ DROP TABLE IF EXISTS votes;
 
 CREATE TABLE users (
    id serial Primary Key,
+   fullname text,
    username text Not Null unique,
    email text NOT NULL unique,
+   age Int,
    profile_pic varchar
 );
 
@@ -34,12 +36,12 @@ CREATE TABLE votes (
    picture_id Int REFERENCES pictures(id)
 );
 
-INSERT INTO users (username, email, profile_pic)
+INSERT INTO users (fullname, username, email, age, profile_pic)
    VALUES 
-   ('dejaf', 'dejaflynn@pursuit.org', 'https://img.gadgethacks.com/img/68/44/63703994759508/0/change-your-profile-picture-display-name-for-imessage-ios-13.w1456.jpg'),  
-   ('nilberr', 'nilberremon@pursuit.org', 'https://i1.sndcdn.com/artworks-000200690435-zz758s-t500x500.jpg'),
-   ('ashyam', 'ashyamanning@pursuit.org', 'https://qph.fs.quoracdn.net/main-qimg-217015358349186e0e382cb15c5d7c63'),
-   ('karenm', 'karenmorisset@pursuit.org', 'https://s3.amazonaws.com/images.seroundtable.com/google-social-knowledge-1561549945.jpg');
+   ('Deja Flynn','dejaf', 'dejaflynn@pursuit.org', 30, 'https://img.gadgethacks.com/img/68/44/63703994759508/0/change-your-profile-picture-display-name-for-imessage-ios-13.w1456.jpg'),  
+   ('Nílber Remón', 'nilberr', 'nilberremon@pursuit.org', 125, 'https://i1.sndcdn.com/artworks-000200690435-zz758s-t500x500.jpg'),
+   ('Ashya Manning','ashyam', 'ashyamanning@pursuit.org', 27, 'https://qph.fs.quoracdn.net/main-qimg-217015358349186e0e382cb15c5d7c63'),
+   ('Karen Morisset','karenm', 'karenmorisset@pursuit.org', 21, 'https://s3.amazonaws.com/images.seroundtable.com/google-social-knowledge-1561549945.jpg');
 
 INSERT INTO pictures (user_id, picture)
    VALUES 
