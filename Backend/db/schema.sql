@@ -24,6 +24,12 @@ CREATE TABLE pictures (
    created_at TIMESTAMPTZ DEFAULT Now() 
 );
 
+CREATE TABLE hashtags (
+   id serial Primary Key,
+   picture_id Int REFERENCES pictures(id),
+   body varchar
+)
+
 CREATE TABLE votes (
    id serial Primary Key,
    voter_id Int REFERENCES users(id),
@@ -42,7 +48,7 @@ INSERT INTO pictures (user_id, picture, hashtag)
    (1, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-768x549.jpg','#possesdog'),
    (1, 'https://i.ytimg.com/vi/bzZEH_5OuIs/maxresdefault.jpg', '#funny'),
    (2, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-1126205831.jpg', '#funnysquirrel'),
-   (2, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-599966138-767x514.jpg', '##crazyhorse'),
+   (2, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-599966138-767x514.jpg', '#crazyhorse'),
    (3, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-171582169.jpg', '#possesskid'),
    (3, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-1058317014-760x506.jpg', '#bossbaby'),
    (4, 'https://digitalsynopsis.com/wp-content/uploads/2017/12/funny-agency-life-creative-designer-copywriter-memes-1.jpg', '#wtf'),

@@ -80,7 +80,7 @@ const createImage = async (req, res) => {
  const getImageHashtags = async (req, res)=>{
      try{
          let imageHashtags = await db.one("SELECT u.username, ARRAY_AGG (p.picture) AS Arr_Pics FROM pictures p JOIN users u ON u.id = p.user_id GROUP BY u.id HAVING u.id = $1", req.params.id)
-
+            res.status({})
      }catch(err){
 
      }
