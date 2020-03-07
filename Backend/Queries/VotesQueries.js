@@ -34,4 +34,4 @@ const addVote = async (req, res) => {
     }
 }
 
-module.exports = { getVote, addVote };
+module.exports = {  getVote, addVote  };
