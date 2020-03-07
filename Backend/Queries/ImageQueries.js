@@ -79,9 +79,18 @@ const createImage = async (req, res) => {
  }
  const getImageHashtags = async (req, res)=>{
      try{
-         let imageHashtags = await db.one("SELECT u.username, ARRAY_AGG (p.picture) AS Arr_Pics FROM pictures p JOIN users u ON u.id = p.user_id GROUP BY u.id HAVING u.id = $1", req.params.id)
-            res.status({})
+    
+         let imageHashtags = await db.one("SELECT p.picture, ARRAY_AGG (h.body) AS arr_hashtags FROM pictures p JOIN hashtags h ON h.picture_id = p.id GROUP BY p.idHAVING p.id = 1", req.params.id)
+            res.status({
+                status: "success",
+                message: "image hashtag found",
+                payload: imageHashtags
+            })
      }catch(err){
+        res.json({
+            status: "success",
+            message: "image hashtag not retrieved",
+        })
 
      }
  }

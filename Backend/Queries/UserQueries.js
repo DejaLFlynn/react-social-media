@@ -52,7 +52,7 @@ const deleteUser = async (req, res) => {
 
 const getImagesByUser = async (req, res, next) => {
    try {
-      let images = await db.any ("SELECT u.username, ARRAY_AGG (p.picture) AS Arr_Pics FROM pictures p JOIN users u ON u.id = p.user_id GROUP BY u.id HAVING u.id = $1", req.params.id)
+      let images = await db.any ("SELECT u.username, ARRAY_AGG (p.picture) AS Arr_Pics FROM pictures p JOIN hashtags u ON u.id = p.user_id GROUP BY u.id HAVING u.id = $1", req.params.id)
       res.status(200).json({
          status: "success",
          message: "All images for one user",
