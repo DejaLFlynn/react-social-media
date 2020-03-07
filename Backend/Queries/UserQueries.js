@@ -64,4 +64,4 @@ const getImagesByUser = async (req, res, next) => {
 }
 
 
-module.exports = { getUser, createUser, deleteUser, getImagesByUser}
+module.exports = { getUser, createUser, deleteUser, getImagesByUser }
