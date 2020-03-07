@@ -1,9 +1,10 @@
 const users = require("express").Router()
-const {createUser, deleteUser, getUser} = require("../../queries/users")
+const {createUser, deleteUser, getUser} = require("../../queries/users/users")
 
 //Nested Route
-const userPostsRouter = require("/:id/images") 
-users.use("/:id/posts", userPostsRouter)
+const usersImagesRouter = require('./Images/Images');
+
+users.use('/', usersImagesRouter);
 
 users.post("/", createUser)
 
@@ -13,4 +14,4 @@ users.get("/:id", getUser)
 
 
 
-module.exports = users
+module.exports = users;
