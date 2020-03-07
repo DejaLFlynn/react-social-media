@@ -1,5 +1,5 @@
 const images = require('express').Router();
-const {createImage, deleteImage } = require('../../Queries/Images');
+const { deleteImage } = require('../../Queries/ImageQueries');
 
 const imageVotesRouter = require("./ImagesNestedRoutes/NestedVotes");
 const imageHashtagRouter = require("./ImagesNestedRoutes/NestedHashtags");
