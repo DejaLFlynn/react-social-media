@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from './Input'
+import Form from './Input'
 
 const Form = (props) => {
     
@@ -8,11 +8,11 @@ const Form = (props) => {
     }
 
     return(
-        <Input placeholder={Enter Username}i/>
+        <form onSubmit={handleSubmit}>
 
-        <Input /> 
+        </form>
 
     )
 }
 
-export default Input
+export default Form
