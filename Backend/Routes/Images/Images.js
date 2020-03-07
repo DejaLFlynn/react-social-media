@@ -7,7 +7,6 @@ images.use("/:id/votes", imageVotesRouter);
 images.use("/:id/hashtags", imageHashtagRouter);
 
 
-images.post("/", createImage);
 images.delete("/:id", deleteImage);
 
 
