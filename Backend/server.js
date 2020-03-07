@@ -13,11 +13,10 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-
+app.use(bodyParser.json())
 app.use("/users", usersRouter)
-app.use("/images", imagesRouter)
-app.use("/votes", votesRouter)
-app.use("/hashtags", hashtagsRouter)
+// app.use("/images", imagesRouter)
+// app.use("/votes", votesRouter)
+// app.use("/hashtags", hashtagsRouter)
 
 app.listen(port, () => console.log(`Server running on Port: ${port}`))
