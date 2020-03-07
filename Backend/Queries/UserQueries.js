@@ -62,5 +62,18 @@ const getImagesByUser = async (req, res, next) => {
       next(err)
    }
 }
+const createImage = async (req, res, next) => {
+   try {
+      let image = await db.one ("INSERT INTO pictures (user_id, picture) VALUES(${user_id}, ${picture})", req.body)
+      res.status(200).json({
+         status: "success",
+         message: "A Single Image",
+         payload: image
+      })
+   } catch (err) {
+      next(err)
+   }
+}
 
-module.exports = { getUser, createUser, deleteUser, getImagesByUser}
+
+module.exports = { getUser, createUser, deleteUser, getImagesByUser, createImage}
