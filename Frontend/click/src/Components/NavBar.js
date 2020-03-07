@@ -1,14 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
+import Input from './Input'
 
 
 const NavBar = () => {
     
-    debugger
+    const [NavButton, setNavButton] = useState(false)
+    
+    const handleNavButton = () => {
+        setNavButton(!NavButton)
+    }
 
+    
     return (
         <nav>
-            {  ? <NavLink to={"/Home"}><button></button></NavLink> : <NavLink to={"/Profile"}><button></button></NavLink> }
+            { NavButton ? <NavLink to={"/Home"}><button onClick={handleNavButton}>HOME</button></NavLink> : <NavLink to={"/Profile"}><button onClick={handleNavButton}>Profile</button></NavLink> }
+            <Input placeholder={"Search Hashtags"}/>
         </nav>
     )
 }

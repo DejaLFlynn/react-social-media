@@ -21,13 +21,14 @@ CREATE TABLE pictures (
    id serial Primary Key,
    user_id Int REFERENCES users(id),
    picture varchar,
+   hashtag text,
    created_at TIMESTAMPTZ DEFAULT Now() 
 );
 
 CREATE TABLE hashtags (
    id serial Primary Key,
    picture_id Int REFERENCES pictures(id),
-   body varchar
+   body text
 );
 
 CREATE TABLE votes (
@@ -69,23 +70,23 @@ INSERT INTO hashtags (picture_id, body)
    (5, '#dad'),
    (5, '#whosleepsthathard?'),
    (6, '#funny'),
-   (6, '#baby'),
+   (6, '#bossbaby'),
    (6, '#babybeenherebefore'),
    (7, '#wtf'),
    (7, '#funnyhorse'),
    (8, '#thematrix');
 
 INSERT INTO votes (voter_id, picture_id)
-VALUES 
-(1, 2),
-(1, 4),
-(2, 2),
-(2, 6),
-(2, 8),
-(3, 2),
-(4, 2),
-(4, 1),
-(3, 6),
-(1, 6),
-(3, 3);
+   VALUES 
+   (1, 2),
+   (1, 4),
+   (2, 2),
+   (2, 6),
+   (2, 8),
+   (3, 2),
+   (4, 2),
+   (4, 1),
+   (3, 6),
+   (1, 6),
+   (3, 3);
 
