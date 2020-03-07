@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 
-const Home = () => {
+const Profile = () => {
     
 
 
 
     return (
-        "Home"
+        "Profile"
     )
 }
 
-export default Home
+export default Profile
