@@ -34,5 +34,21 @@ const getHashtag = async (req, res) => {
     }
 }
 
+const searchHashtag = async (req, res) => {
+    try {
+        let search = await db.any("SELECT body FROM hashtags WHERE body LIKE '#%'");
+        res.status(200).json({
+            status: "Success",
+            message: "Found hashtags",
+            payload: search
+        })
+    } catch (err) {
+        res.status(404).json({
+            status: "Error",
+            message: "Could not find hashtag",
+            payload: null
+        })
+    }
+}
 
-module.exports = { createHashtags, getHashtag };
+module.exports = { createHashtags, getHashtag, searchHashtag };
