@@ -3,7 +3,8 @@ import Form from './Input'
 
 const Form = (props) => {
     
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault()
         
     }
 

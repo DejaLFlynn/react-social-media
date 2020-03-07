@@ -19,7 +19,7 @@ const createHashtags = async (req, res) => {
 
 const getHashtag = async (req, res) => {
     try {
-        let hashtag = await db.one("SELECT * FROM hashtags WHERE id = $1", req.params.id);
+        let hashtag = await db.one("SELECT * FROM hashtags WHERE body = $1", req.params.id);
         res.status(200).json({
             status: "Success",
             message: "Hashtag retrieved",
