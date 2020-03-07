@@ -1,24 +1,21 @@
 import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
-import {usePrevState} from '../Utilities/CustomHooks'
+import Input from './Input'
 
 
 const NavBar = () => {
     
-    const [NavButton, setNavButton] = useState("/Home")
+    const [NavButton, setNavButton] = useState(false)
     
     const handleNavButton = () => {
-        let prevState = usePrevState(NavButton)
-        setNavButton("/Profile")
-        prevState = usePrevState(NavButton)
-        
-        return NavButton
+        setNavButton(!NavButton)
     }
 
     
     return (
         <nav>
-            <NavLink to={NavButton}><button value={NavButton} onClick={handleNavButton}>{NavButton}</button></NavLink>
+            { NavButton ? <NavLink to={"/Home"}><button onClick={handleNavButton}>HOME</button></NavLink> : <NavLink to={"/Profile"}><button onClick={handleNavButton}>Profile</button></NavLink> }
+            <Input />
         </nav>
     )
 }
