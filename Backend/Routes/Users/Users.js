@@ -1,5 +1,5 @@
 const users = require("express").Router()
-const {createUser, deleteUser, getUser} = require("../../queries/users")
+const {createUser, deleteUser, getUser} = require("")
 
 //Nested Route
 const userPostsRouter = require("/:id/images") 
