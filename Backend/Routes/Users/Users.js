@@ -4,7 +4,7 @@ const {createUser, deleteUser, getUser} = require("../../queries/users/users")
 
 
 //Nested Route
-const usersImagesRouter = require('./Images/Images');
+const usersImagesRouter = require('./UsersNestedRoutes/NestedImages');
 
 users.use('/', usersImagesRouter);
 

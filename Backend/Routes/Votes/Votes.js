@@ -1,5 +1,5 @@
 const votes = require("express").Router()
-const {createVote, getVote} = require("../../Queries/Votes")
+const {createVote, getVote} = require("../../Queries/VotesQueries")
 
 
 const userVotesRouter = require("../Images") 
