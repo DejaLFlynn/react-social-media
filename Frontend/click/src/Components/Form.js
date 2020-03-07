@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from './Input'
+import Form from './Input'
 
 const Form = (props) => {
     
@@ -15,4 +15,4 @@ const Form = (props) => {
     )
 }
 
-export default Input
+export default Form
