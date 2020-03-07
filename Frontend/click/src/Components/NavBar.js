@@ -15,7 +15,7 @@ const NavBar = () => {
     return (
         <nav>
             { NavButton ? <NavLink to={"/Home"}><button onClick={handleNavButton}>HOME</button></NavLink> : <NavLink to={"/Profile"}><button onClick={handleNavButton}>Profile</button></NavLink> }
-            <Input />
+            <Input placeholder={"Search Hashtags"}/>
         </nav>
     )
 }

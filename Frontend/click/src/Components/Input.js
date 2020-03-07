@@ -1,11 +1,13 @@
 import React from 'react'
+import {useInput} from '../Utilities/CustomHooks'
 
-const Input = () => {
+const Input = (props) => {
+    
+    const input = useInput("")
+
     return(
-        <input type="text"/>
+        <input type="text" placeholder={props.placeholder} {...input}/>
     )
 }
-
-
 
 export default Input
