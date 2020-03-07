@@ -24,6 +24,12 @@ CREATE TABLE pictures (
    created_at TIMESTAMPTZ DEFAULT Now() 
 );
 
+CREATE TABLE hashtags (
+   id serial Primary Key,
+   picture_id Int REFERENCES pictures(id),
+   body varchar
+)
+
 CREATE TABLE votes (
    id serial Primary Key,
    voter_id Int REFERENCES users(id),
