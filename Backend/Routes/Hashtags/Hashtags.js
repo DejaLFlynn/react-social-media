@@ -1,9 +1,9 @@
 const hashtags = require("express").Router()
-const { getHashtag } = require("../../Queries/HashtagQueries");
+const { searchHashtag } = require("../../Queries/HashtagQueries");
 
+const hashtagImageRouter = require("./HashtagsNestedRoutes/NestedImages");
+hashtags.use("/:id/images", hashtagImageRouter)
 
-hashtags.get("/:id", getHashtag)
-
-
+hashtags.get("/", searchHashtag)
 
 module.exports = hashtags

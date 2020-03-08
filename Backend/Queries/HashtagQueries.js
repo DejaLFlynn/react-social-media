@@ -17,29 +17,12 @@ const createHashtag = async (req, res) => {
     }
 }
 
-const getHashtag = async (req, res) => {
+const getRandomHashtags = async (req, res) => {
     try {
-        let hashtag = await db.one("SELECT * FROM hashtags WHERE body = $1", req.params.id);
+        let hashtags = await db.any("SELECT p.picture, ARRAY_AGG (h.body) user_hashtags FROM pictures p JOIN hashtags h ON h.picture_id = p.id GROUP BY p.picture, p.id ORDER BY random() LIMIT 2");
         res.status(200).json({
             status: "Success",
-            message: "Hashtag retrieved",
-            payload: hashtag
-        })
-    } catch (err) {
-        res.status(404).json({
-            status: "Error",
-            message: "Hashtag not found",
-            payload: null
-        })
-    }
-}
-
-const getHashtags = async (req, res) => {
-    try {
-        let hashtags = await db.any("SELECT * FROM hashtags");
-        res.status(200).json({
-            status: "Success",
-            message: "Found hashtags",
+            message: "Found random hashtags",
             payload: hashtags
         })
     } catch (err) {
@@ -68,4 +51,21 @@ const searchHashtag = async (req, res) => {
     }
 }
 
-module.exports = { createHashtag, getHashtag, getHashtags, searchHashtag };
+const imagesByHashtag = async (req, res) => {
+    try {
+        let images = await db.any("SELECT pictures.picture, ARRAY_AGG (hashtags.body) image_hashtags FROM hashtags JOIN pictures ON pictures.id = hashtags.picture_id GROUP BY pictures.id, pictures.picture HAVING pictures.id = $1", req.params.id);
+        res.status(200).json({
+            status: "Success",
+            message: "Retrieved images by hastag",
+            payload: images
+        })
+    } catch (err) {
+        res.status(404).json({
+            status: "Error",
+            message: "Couldn't find images by hashtag",
+            payload: null
+        })
+    }
+}
+
+module.exports = { createHashtag, getRandomHashtags, searchHashtag, imagesByHashtag };
