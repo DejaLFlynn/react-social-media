@@ -1,7 +1,6 @@
 import React from 'react'
 
 
-
 const PrivateRoute = ({ children, ...rest }) => {
     return (
       <Route
@@ -21,3 +20,5 @@ const PrivateRoute = ({ children, ...rest }) => {
       />
     );
   }
+
+  export default PrivateRoute
