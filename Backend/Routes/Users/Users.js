@@ -15,5 +15,4 @@ users.delete("/:id", deleteUser)
 users.get("/:id", getUser)
 
 
-
 module.exports = users;

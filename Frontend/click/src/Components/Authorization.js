@@ -20,19 +20,19 @@ const Authorization = () => {
         <>
             {!authorization ?
                 <Switch>
-                <Route path={"/"}>
+                <Route exact path={"/"}>
                     <LandingPage onLogin={handleAuthorization}/>
                 </Route>
                 <Route path ={"/SignUp"}>
                     <SignUp onLogin={handleAuthorization}/>
                 </Route>
                 </Switch>
-                : null }
+                : <Redirect to={"/Home"}/> }
 
-           
             {authorization ?
-                <Switch>
+                <>
                 <NavBar />
+                <Switch>
                 <Route path={"/Home"} >
                     <Home/>
                 </Route>
@@ -40,7 +40,8 @@ const Authorization = () => {
                     <Profile />
                 </Route>
                 </Switch>
-            : <Redirect to={"/SignIn"}/> }
+                </>
+            : <Redirect to={"/"}/>  }
         </>
     )
   }
