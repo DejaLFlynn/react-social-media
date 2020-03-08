@@ -16,7 +16,7 @@ const SignUpPage =({onLogin})=>{
         try{
             let res = await axios.post("http://localhost:3000/users", {
                 email: email.value,    
-                fullname: name.value,
+                fullname: fullname.value,
                 username: username.value,
                 age: age.value,
                 profile_pic: profile_pic.value
