@@ -1,52 +1,42 @@
 import React, {useState, Profiler} from 'react'
 import { useInput } from '../Utilities/CustomHooks';
-import { useHistory } from 'react-router-dom';
+import axios from "axios"
 
-const Home = () => {
+const LandingPage = ({onLogin}) => {
 
-      const fullname = useInput("")
       const username = useInput("")
       const email = useInput("")
-      const age = useInput("")
-      const profile_pic = useInput("")
+
     
-  
-    const history = useHistory() 
-    
-    const handleSubmit =(e)=>{
-    e.preventDefault()
-        history.push(`/users/${fullname.value}`)
-        history.push(`/users/${username.value}`)
-        history.push(`/users/${email.value}`)
-        history.push(`/users/${age.value}`)
-        history.push(`/users/${profile_pic.value}`)
-    
+    const handleSubmit = async (e)=>{
+        onLogin.handleAuthorization()
+        e.preventDefault()
+        try{
+            let res = await axios.get(`http://localhost:3000/users/${username}`)
+         
+        }catch(error){
+            console.log(error)
+        }
         
     }
 
+
     return (
         <form onSubmit={handleSubmit}>
-        <label> Full Name:
-          <input type="text"{...fullname}/>
-        </label>
+      
         <label> User Name:
-          <input type="text"{...username}/>
+          <input type="text"name={"username"}{...username}/>
         </label>
         <label> email:
-          <input type="text"{...email}/>
+          <input type="text"name={"email"}{...email}/>
         </label>
-        <label> Age:
-          <input type="text"{...age}/>
-        </label>
-        <label> Profile Pic:
-          <input type="text"{...profile_pic}/>
-        </label>
+     
     
      </form>
     )
 }
 
-export default Home
+export default LandingPage
 
 
 // let form = document.querySelector("#form");
