@@ -9,11 +9,11 @@ const getUser = async (req, res) => {
          payload: user
       })
    } catch (err) {
-      res.json({
-         status: "error",
-         message: "user was not created",
+      res.status(404).json({
+         status: err,
+         message: "user was not found",
          payload: null
-      })
+     })
    }  
 }
 
@@ -26,9 +26,8 @@ const createUser = async (req, res) => {
          payload: newUser
       })
    } catch (err){
-      console.log(err)
-      res.json({
-         status: "error",
+      res.status(404).json({
+         status: err,
          message: "user was not created",
          payload: null
       })
@@ -43,9 +42,8 @@ const deleteUser = async (req, res) => {
          message: "The user is deleted"
       })
    } catch (err) {
-      console.log(err)
-      res.json({
-         status: "error",
+      res.status(404).json({
+         status: err,
          message: "The user was not deleted"
       })
    }
@@ -60,8 +58,12 @@ const getImagesByUser = async (req, res, next) => {
          payload: images
       })
    } catch (err) {
-      next(err)
-   }
+      res.status(404).json({
+         status: err,
+         message: "There are no images found for the specified user",
+         payload: null
+   })
+ }
 }
 
 
