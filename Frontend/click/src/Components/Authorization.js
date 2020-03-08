@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 
 
 import NavBar from './NavBar'
@@ -18,15 +18,19 @@ const Authorization = () => {
 
     return (
         <>
-            <Switch>
+            {!authorization ?
+                <Switch>
                 <Route path={"/"}>
-                    <LandingPage />
+                    <LandingPage onLogin={handleAuthorization}/>
                 </Route>
                 <Route path ={"/SignUp"}>
                     <SignUp />
                 </Route>
+                </Switch>
+                : null }
+
            
-                {authorization ?
+            {authorization ?
                 <Switch>
                 <NavBar />
                 <Route path={"/Home"} >
@@ -36,8 +40,7 @@ const Authorization = () => {
                     <Profile />
                 </Route>
                 </Switch>
-            : null }
-        </Switch> 
+            : <Redirect to={"/SignIn"}/> }
         </>
     )
   }
