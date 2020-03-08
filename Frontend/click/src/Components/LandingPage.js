@@ -1,5 +1,5 @@
-import React from 'react'
-import { useState, useInput } from '../Utilities/CustomHooks'
+import React, {useState} from 'react'
+import { useInput } from '../Utilities/CustomHooks'
 import Error from './Error'
 import axios from "axios"
 
