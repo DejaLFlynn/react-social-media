@@ -8,6 +8,7 @@ import Home from './Home'
 import Profile from './ProfilePage'
 import SignIn from './SignInPage'
 import PrivateRoute from './PrivateRoute'
+import SignUpPage from './SignUpPage';
 
 const Authorization = () => {
     
@@ -25,8 +26,8 @@ const Authorization = () => {
                 <Route path={"/"}>
                     <LandingPage onLogin={handleAuthorization}/>
                 </Route>
-                <Route path ={"/SignIn"}>
-                    <SignIn />
+                <Route path ={"/SignUp"}>
+                    <SignUpPage />
                 </Route>
             
                 <Private loggedIn={authorization}>
