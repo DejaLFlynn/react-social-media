@@ -3,22 +3,38 @@ import {Route, Switch} from 'react-router-dom'
 
 import './App.css';
 
+
 import NavBar from './Components/NavBar'
-import Home from './Components/LandingPage'
+import LandingPage from './Components/LandingPage'
+import Home from './Components/Home'
 import Profile from './Components/ProfilePage'
+import SignIn from './Components/SignInPage'
+import PrivateRoute from './Components/PrivateRoute'
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-
+      
+    
       <Switch>
-          <Route path={"/Home"}>
-            <Home/>
+          <Route path={"/"}>
+            <LandingPage />
           </Route>
-          <Route path={"/Profile"}>
-            <Profile />
+          <Route path ={"/SignIn"}>
+            <SignIn />
           </Route>
+          
+          <PrivateRoute>
+            <Switch>
+            <NavBar />
+            <Route path={"/Home"}>
+              <Home/>
+            </Route>
+            <Route path={"/Profile"}>
+              <Profile />
+            </Route>
+            </Switch>
+          </PrivateRoute>
       </Switch>
 
     </div>
