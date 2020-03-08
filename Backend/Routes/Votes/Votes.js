@@ -4,7 +4,7 @@ const { getVote } = require("../../Queries/VotesQueries")
 
 
 
-votes.get("/votes", getVote)
+votes.get("/:id", getVote)
 
 
 
