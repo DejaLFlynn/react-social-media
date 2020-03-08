@@ -57,24 +57,24 @@ INSERT INTO pictures (user_id, picture)
 
 INSERT INTO hashtags (picture_id, body)
    VALUES 
-   (1, '#possesdog'),
-   (1, '#funny'),
-   (2, '#crazydog'),
-   (3, '#funnysquirrel'),
-   (3, '#funny'),
-   (3, '#OMG'),
-   (4, '#funny'),
-   (4, '#crazyhorse'),
-   (4, '#bigmouth'),
-   (5, '#possesskid'),
-   (5, '#dad'),
-   (5, '#whosleepsthathard?'),
-   (6, '#funny'),
-   (6, '#bossbaby'),
-   (6, '#babybeenherebefore'),
-   (7, '#wtf'),
-   (7, '#funnyhorse'),
-   (8, '#thematrix');
+   (1, 'possesdog'),
+   (1, 'funny'),
+   (2, 'crazydog'),
+   (3, 'funnysquirrel'),
+   (3, 'funny'),
+   (3, 'OMG'),
+   (4, 'funny'),
+   (4, 'crazyhorse'),
+   (4, 'bigmouth'),
+   (5, 'possesskid'),
+   (5, 'dad'),
+   (5, 'whosleepsthathard?'),
+   (6, 'funny'),
+   (6, 'bossbaby'),
+   (6, 'babybeenherebefore'),
+   (7, 'wtf'),
+   (7, 'funnyhorse'),
+   (8, 'thematrix');
 
 INSERT INTO votes (voter_id, picture_id)
    VALUES 
