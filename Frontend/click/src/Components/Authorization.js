@@ -8,7 +8,6 @@ import Home from './Home'
 import Profile from './ProfilePage'
 import SignIn from './SignInPage'
 import PrivateRoute from './PrivateRoute'
-import SignUpPage from './SignUpPage';
 
 const Authorization = () => {
     
@@ -20,28 +19,23 @@ const Authorization = () => {
 
     return (
         <>
-            
-            
+            {authorization ? <navBar /> : null}
             <Switch>
                 <Route path={"/"}>
                     <LandingPage onLogin={handleAuthorization}/>
                 </Route>
-                <Route path ={"/SignUp"}>
-                    <SignUpPage />
+                <Route path ={"/SignIn"}>
+                    <SignIn />
                 </Route>
-            
-                <Private loggedIn={authorization}>
-                    <NavBar />
-                    <PrivateRoute path={"/Home"} loggedIn={authorization>
-                        <Home/>
-                    </PrivateRoute>
-                    <PrivateRoute path={"/Profile"} loggedIn={authorization>
-                        <Profile />
-                    </PrivateRoute>
-                </Private>
+                <PrivateRoute path={"/Home"} loggedIn={authorization}>
+                    <Home/>
+                </PrivateRoute>
+                <PrivateRoute path={"/Profile"} loggedIn={authorization}>
+                    <Profile />
+                </PrivateRoute>
             </Switch>
         </>
-    );
+    )
   }
   
 export default Authorization;
