@@ -14,9 +14,9 @@ const LandingPage = ({onLogin}) => {
       event.preventDefault()
       try{
         let res = await axios.get(`http://localhost:4000/users/${username.value}`)
-        console.log(res)
+        debugger
         if (res) {
-          onLogin.handleAuthorization()}
+          onLogin()}
       }catch(error){
         setError("Please Enter a Valid Username or Sign the F*ck Up")
       }

@@ -9,10 +9,9 @@ const getUser = async (req, res) => {
          payload: user
       })
    } catch (err) {
-      console.log(err)
       res.json({
          status: "error",
-         message: "user not found",
+         message: "user was not created",
          payload: null
       })
    }  
