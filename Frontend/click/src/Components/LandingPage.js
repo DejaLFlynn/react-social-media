@@ -20,6 +20,7 @@ const Home = () => {
         history.push(`/users/${age.value}`)
         history.push(`/users/${profile_pic.value}`)
     
+        
     }
 
     return (
