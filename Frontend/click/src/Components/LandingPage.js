@@ -1,4 +1,4 @@
-import React, {useState, Profiler} from 'react'
+import React from 'react'
 import { useInput } from '../Utilities/CustomHooks';
 import axios from "axios"
 
@@ -9,14 +9,13 @@ const LandingPage = ({onLogin}) => {
 
     
     const handleSubmit = async (e)=>{
+      e.preventDefault()
+      try{
+        let res = await axios.get(`http://localhost:3000/users/${username}`)
         onLogin.handleAuthorization()
-        e.preventDefault()
-        try{
-            let res = await axios.get(`http://localhost:3000/users/${username}`)
-         
-        }catch(error){
-            console.log(error)
-        }
+      }catch(error){
+        console.log(error)
+      }
         
     }
 

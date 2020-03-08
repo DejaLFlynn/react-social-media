@@ -6,8 +6,7 @@ import NavBar from './NavBar'
 import LandingPage from './LandingPage'
 import Home from './Home'
 import Profile from './ProfilePage'
-import SignIn from './SignInPage'
-import PrivateRoute from './PrivateRoute'
+import SignUp from './SignUpPage'
 
 const Authorization = () => {
     
@@ -19,21 +18,26 @@ const Authorization = () => {
 
     return (
         <>
-            {authorization ? <navBar /> : null}
             <Switch>
                 <Route path={"/"}>
-                    <LandingPage onLogin={handleAuthorization}/>
+                    <LandingPage />
                 </Route>
-                <Route path ={"/SignIn"}>
-                    <SignIn />
+                <Route path ={"/SignUp"}>
+                    <SignUp />
                 </Route>
-                <PrivateRoute path={"/Home"} loggedIn={authorization}>
+           
+                {authorization ?
+                <Switch>
+                <NavBar />
+                <Route path={"/Home"} >
                     <Home/>
-                </PrivateRoute>
-                <PrivateRoute path={"/Profile"} loggedIn={authorization}>
+                </Route>
+                <Route path={"/Profile"}>
                     <Profile />
-                </PrivateRoute>
-            </Switch>
+                </Route>
+                </Switch>
+            : null }
+        </Switch> 
         </>
     )
   }
