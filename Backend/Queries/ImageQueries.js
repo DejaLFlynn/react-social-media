@@ -18,12 +18,13 @@ const createImage = async (req, res) => {
  }
  const deleteImage = async (req, res) => {
     try {
-       await db.none("DELETE FROM users WHERE id = $1", req.params.id);
+       await db.none("DELETE FROM pictures WHERE id = $1", req.params.id);
        res.status(200).json({
           status: "success",
           message: "A picture was deleted "
        })
     } catch (err){
+       console.log(err)
        res.json({
           status: "error",
           message: "picture was not deleted",

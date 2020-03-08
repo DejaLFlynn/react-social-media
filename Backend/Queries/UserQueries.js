@@ -15,18 +15,19 @@ const getUser = async (req, res) => {
          message: "user not found",
          payload: null
       })
-   }
+   }  
 }
 
 const createUser = async (req, res) => {
    try {
-      let newUser = db.none("INSERT INTO users (fullname, username, email, age, profile_pic) VALUES(${fullname}, ${username}, ${email}, ${age}, ${profile_pic})", req.body);
+      let newUser = await db.one("INSERT INTO users (fullname, username, email, age, profile_pic) VALUES(${fullname}, ${username}, ${email}, ${age}, ${profile_pic}) RETURNING *", req.body);
       res.status(200).json({
          status: "success",
          message: "A new user is created ",
          payload: newUser
       })
    } catch (err){
+      console.log(err)
       res.json({
          status: "error",
          message: "user was not created",
