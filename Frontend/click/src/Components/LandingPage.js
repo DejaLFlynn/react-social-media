@@ -13,18 +13,20 @@ const LandingPage = ({onLogin}) => {
     const handleSubmit = async (event)=>{
       event.preventDefault()
       try{
-        let res = await axios.get(`http://localhost:3000/users/${username}`)
+        let res = await axios.get(`http://localhost:4000/users/${username.value}`)
+        console.log(res)
         if (res) {
           onLogin.handleAuthorization()}
       }catch(error){
         setError("Please Enter a Valid Username or Sign the F*ck Up")
       }
+
         
     }
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(event) => {handleSubmit(event)}}>
       
         <label> User Name:
           <input type="text"name={"username"}{...username}/>
@@ -32,9 +34,10 @@ const LandingPage = ({onLogin}) => {
         <label> email:
           <input type="text"name={"email"}{...email}/>
         </label>
+        <button type="submit"></button>
         </form>
-
-        { error ? <Error message={error}/> : null}
+        
+        { !error ? <Error message={error}/> : null}
         </>
     )
 }
