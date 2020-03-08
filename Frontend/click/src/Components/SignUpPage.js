@@ -9,6 +9,7 @@ const SignUpPage =({onLogin})=>{
     const age = useInput("")
     const profile_pic = useInput("")
 
+    
 
     const handleSubmit = async (e)=>{
         onLogin.handleAuthorization()
