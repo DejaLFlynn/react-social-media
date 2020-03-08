@@ -26,14 +26,14 @@ CREATE TABLE pictures (
 
 CREATE TABLE hashtags (
    id serial Primary Key,
-   picture_id Int REFERENCES pictures(id),
+   picture_id Int REFERENCES pictures(id) ON DELETE CASCADE,
    body text
 );
 
 CREATE TABLE votes (
    id serial Primary Key,
    voter_id Int REFERENCES users(id),
-   picture_id Int REFERENCES pictures(id)
+   picture_id Int REFERENCES pictures(id) ON DELETE SET NULL
 );
 
 INSERT INTO users (fullname, username, email, age, profile_pic)
