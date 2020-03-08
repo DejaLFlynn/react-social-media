@@ -34,7 +34,7 @@ const addVote = async (req, res) => {
     }
 }
 
-const findMaxVote = async (req, res) => {
+const findMaxVotes = async (req, res) => {
     try {
         let maxVote = await db.any("SELECT p.picture, COUNT(v.voter_id) AS total_votes FROM pictures p JOIN votes v ON v.picture_id = p.id GROUP BY p.picture ORDER BY total_votes DESC LIMIT 1");
         res.status(200).json({
