@@ -21,7 +21,6 @@ CREATE TABLE pictures (
    id serial Primary Key,
    user_id Int REFERENCES users(id),
    picture varchar,
-   hashtag text,
    created_at TIMESTAMPTZ DEFAULT Now() 
 );
 
