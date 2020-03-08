@@ -56,7 +56,7 @@ const LandingPage = ({onLogin}) => {
         </div>
 
 
-        { error ? <Error message={error}/> : null}
+        { !error ? <Error message={error}/> : null}
         </div>
 
         </>
