@@ -47,7 +47,7 @@ const createImage = async (req, res) => {
  }
  const addImageHashtags = async (req, res)=>{
      try{
-         let newImageHashtag = await db.one ("INSERT INTO pictures (user_id, picture, hashtag) VALUES(${user_id}, ${picture}, ${hashtag})", req.body)
+         let newImageHashtag = await db.one ("INSERT INTO pictures (user_id, picture) VALUES(${user_id}, ${picture})", req.body)
          res.status(200).json({
              status: "success",
              message: "Hashtag added for image",
