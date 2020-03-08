@@ -1,24 +1,18 @@
 import React from 'react'
+import {Route, Switch, Redirect } from 'react-router';
 
 
-const PrivateRoute = ({ children, ...rest }) => {
+const PrivateRoute = ({ children, authorization }) => {
     return (
-      <Route
-        {...rest}
-        render={({ location }) =>
-          fakeAuth.isAuthenticated ? (
-            children
-          ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: location }
-              }}
-            />
-          )
-        }
-      />
-    );
-  }
+        <Route render={children => }>
 
-  export default PrivateRoute
+            { authorization ? children : <Redirect to={"/SignIn"}/> }
+        </Route>
+    );
+}
+
+export default PrivateRoute
+
+<Route render={props => auth === true
+    ? <Component auth={auth} {...props} />
+    : <Redirect to={{pathname:'/'}} />
