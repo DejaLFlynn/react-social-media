@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Route, Switch} from 'react-router-dom'
 
 
@@ -11,11 +11,17 @@ import PrivateRoute from './PrivateRoute'
 
 const Authorization = () => {
     
+    const [authorization, setAuthorization]  = useState(false) 
+
+    const handleAuthorization = () => {
+        setAuthorization(!authorization)
+    }
+
     return (
       <div className="App">
 
         <Route path={"/"}>
-            <LandingPage />
+            <LandingPage onLogin={handleAuthorization}/>
         </Route>
         <Route path ={"/SignIn"}>
             <SignIn />
