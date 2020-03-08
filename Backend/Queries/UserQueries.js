@@ -9,6 +9,7 @@ const getUser = async (req, res) => {
          payload: user
       })
    } catch (err) {
+      console.log(err)
       res.json({
          status: "error",
          message: "user not found",
@@ -19,7 +20,7 @@ const getUser = async (req, res) => {
 
 const createUser = async (req, res) => {
    try {
-      let newUser = db.one("INSERT INTO users (username, email, age, profile_pic) VALUES(${username}, ${email}, ${age}, ${profile_pic})", req.body);
+      let newUser = db.one("INSERT INTO users (fullname, username, email, age, profile_pic) VALUES(${fullname}, ${username}, ${email}, ${age}, ${profile_pic})", req.body);
       res.status(200).json({
          status: "success",
          message: "A new user is created ",
