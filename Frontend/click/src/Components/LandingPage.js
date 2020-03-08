@@ -12,6 +12,7 @@ const Home = () => {
     
   
     const history = useHistory() 
+    
     const handleSubmit =(e)=>{
     e.preventDefault()
         history.push(`/users/${fullname.value}`)
