@@ -23,14 +23,11 @@ const NavBar = () => {
         } catch (error) {
             console.log(error)
         }
-
     }
-    
-    
 
     const handleOnSubmit = async (event) => {
         event.preventDefault()
-        fetchHashtags(`http://localhost:4000/hashtags/${input.value}`)
+        fetchHashtags(`http://localhost:4000/hashtags/${input.value}`) //Fix Connection
         
     }
     

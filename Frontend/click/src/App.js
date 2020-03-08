@@ -1,26 +1,14 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom'
-
+import React from 'react'
 import './App.css';
 
-import NavBar from './Components/NavBar'
-import Home from './Components/LandingPage'
-import Profile from './Components/ProfilePage'
+import Authorization from './Components/Authorization'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <NavBar />
 
-      <Switch>
-          <Route path={"/Home"}>
-            <Home/>
-          </Route>
-          <Route path={"/Profile"}>
-            <Profile />
-          </Route>
-      </Switch>
-
+      <Authorization />  
+    
     </div>
   );
 }
