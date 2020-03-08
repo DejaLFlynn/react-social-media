@@ -1,11 +1,8 @@
 const votes = require("express").Router()
-const { getVote } = require("../../Queries/VotesQueries")
-
-
-
+const { getVote, findMaxVotes } = require("../../Queries/VotesQueries")
 
 votes.get("/:id", getVote)
 
-
+votes.get("/", findMaxVotes)
 
 module.exports = votes
