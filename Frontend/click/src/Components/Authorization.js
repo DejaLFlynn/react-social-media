@@ -14,33 +14,32 @@ const Authorization = () => {
     const [authorization, setAuthorization]  = useState(false) 
 
     const handleAuthorization = () => {
-        setAuthorization(!authorization)
+        setAuthorization(true)
     }
 
     return (
-      <div className="App">
-
-        <Route path={"/"}>
-            <LandingPage onLogin={handleAuthorization}/>
-        </Route>
-        <Route path ={"/SignIn"}>
-            <SignIn />
-        </Route>
-        
-        <PrivateRoute>
-            <NavBar />
+        <>
+            
+            
             <Switch>
-                <Route path={"/Home"}>
-                    <Home/>
+                <Route path={"/"}>
+                    <LandingPage onLogin={handleAuthorization}/>
                 </Route>
-                <Route path={"/Profile"}>
-                    <Profile />
+                <Route path ={"/SignIn"}>
+                    <SignIn />
                 </Route>
+            
+                <Private loggedIn={authorization}>
+                    <NavBar />
+                    <PrivateRoute path={"/Home"} loggedIn={authorization>
+                        <Home/>
+                    </PrivateRoute>
+                    <PrivateRoute path={"/Profile"} loggedIn={authorization>
+                        <Profile />
+                    </PrivateRoute>
+                </Private>
             </Switch>
-        </PrivateRoute>`
-  
-  
-      </div>
+        </>
     );
   }
   
