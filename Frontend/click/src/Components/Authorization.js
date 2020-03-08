@@ -24,7 +24,7 @@ const Authorization = () => {
                     <LandingPage onLogin={handleAuthorization}/>
                 </Route>
                 <Route path ={"/SignUp"}>
-                    <SignUp />
+                    <SignUp onLogin={handleAuthorization}/>
                 </Route>
                 </Switch>
                 : null }
