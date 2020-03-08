@@ -1,6 +1,6 @@
 const db = require("../db/db");
 
-const createHashtags = async (req, res) => {
+const createHashtag = async (req, res) => {
     try {
         let hashtags = await db.any("INSERT INTO hashtags (picture_id, body) VALUES (${picture_id}, ${body})", req.body);
         res.status(200).json({
@@ -34,6 +34,23 @@ const getHashtag = async (req, res) => {
     }
 }
 
+const getHashtags = async (req, res) => {
+    try {
+        let hashtags = await db.any("SELECT * FROM hashtags");
+        res.status(200).json({
+            status: "Success",
+            message: "Found hashtags",
+            payload: hashtags
+        })
+    } catch (err) {
+        res.status(404).json({
+            status: "Error",
+            message: "Could not find any hashtags",
+            payload: null
+        })
+    }
+}
+
 const searchHashtag = async (req, res) => {
     try {
         let search = await db.any("SELECT body FROM hashtags WHERE body LIKE '#%'");
@@ -51,4 +68,4 @@ const searchHashtag = async (req, res) => {
     }
 }
 
-module.exports = { createHashtags, getHashtag, searchHashtag };
+module.exports = { createHashtag, getHashtag, getHashtags, searchHashtag };
