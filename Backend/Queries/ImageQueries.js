@@ -24,6 +24,7 @@ const createImage = async (req, res) => {
           message: "A picture was deleted "
        })
     } catch (err){
+       console.log(err)
        res.json({
           status: "error",
           message: "picture was not deleted",
