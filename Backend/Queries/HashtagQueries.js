@@ -10,7 +10,7 @@ const createHashtag = async (req, res) => {
         })
     } catch (err) {
         res.status(404).json({
-            status: "Error",
+            status: err,
             message: "Hashtags not created",
             payload: null
         })
@@ -27,7 +27,7 @@ const getRandomHashtags = async (req, res) => {
         })
     } catch (err) {
         res.status(404).json({
-            status: "Error",
+            status: err,
             message: "Could not find any hashtags",
             payload: null
         })
@@ -44,7 +44,7 @@ const searchHashtag = async (req, res) => {
         })
     } catch (err) {
         res.status(404).json({
-            status: "Error",
+            status: err,
             message: "Could not find hashtag",
             payload: null
         })
@@ -61,7 +61,7 @@ const imagesByHashtag = async (req, res) => {
         })
     } catch (err) {
         res.status(404).json({
-            status: "Error",
+            status: err,
             message: "Couldn't find images by hashtag",
             payload: null
         })
