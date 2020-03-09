@@ -21,7 +21,7 @@ fieldset{border-width:0; padding:0; margin:0;
 .Container{
     width: 800px;
     margin: auto;
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
