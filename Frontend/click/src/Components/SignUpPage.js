@@ -24,7 +24,7 @@ const SignUpPage =({onLogin})=>{
           });
         if (res) {
           sessionStorage.setItem("username", username.value);
-          sessionStorage.setItem("id", res.data.newUser.id)
+          sessionStorage.setItem("id", res.data.payload.id)
           onLogin()
         }
         }catch(error){
@@ -79,4 +79,4 @@ export default SignUpPage;
 //   return !regex.test(name)
 //      ? "The name must contain at least three letters..."
 //      : "";
-}
+//}
