@@ -31,39 +31,40 @@ const LandingPage = ({onLogin}) => {
     return (
         <>
 
-        <div className="LandingPage">
+          <div className="LandingPage">
     
-        <div className="Container">
-        <div className="header">
-            Logo
-        </div>
-        <div className="popularPic">
+            <div className="Container">
+              <div className="header">
+                Logo
+              </div>
+              
+              <div className="popularPic">
 
-        </div>
-        <div className="signIn">
-        <form onSubmit={handleSubmit}>
+              </div>
+              
+              <div className="signIn">
+                <form onSubmit={handleSubmit}>
 
-      
-        <label> User Name:
-          <input type="text"name={"username"}{...username}/>
-        </label>
-        <br></br>
-        <label> email:
-          <input type="text"name={"email"}{...email}/>
-        </label>
-        <button type="submit"></button>
-        </form>
+                <label> User Name:
+                  <input type="text"name={"username"}{...username}/>
+                </label>
+                <br></br>
+                <label> email:
+                  <input type="text"name={"email"}{...email}/>
+                </label>
+                <button type="submit"></button>
+                </form>
 
-        </div>
+              </div>
 
-        </div>
+            </div>
 
 
-        { !error ? <Error message={error}/> : null}
-        </div>
+            { !error ? <Error message={error}/> : null}
+          </div>
 
         </>
     )
 }
 
-export default LandingPage
+export default LandingPage;
