@@ -54,7 +54,7 @@ const LandingPage = ({onLogin}) => {
                 </label>
                 <button type="submit"></button>
                 </form>
-
+                
               </div>
 
             </div>
