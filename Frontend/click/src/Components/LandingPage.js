@@ -18,7 +18,7 @@ const LandingPage = ({onLogin}) => {
         debugger
         if (res) {
           sessionStorage.setItem("username", username.value);
-          sessionStorage.setItem("id", res.data.user.id)
+          sessionStorage.setItem("id", res.data.payload.id)
           onLogin()
         }
       }catch(error){
@@ -26,6 +26,15 @@ const LandingPage = ({onLogin}) => {
       }
 
         
+    }
+    const topVotedPic = async()=>{
+        try{
+            let res = await axios.get(`http://localhost:4000/images`)
+
+        }catch(error){
+            setError("refresh or error for images")
+
+        }
     }
 
     return (
