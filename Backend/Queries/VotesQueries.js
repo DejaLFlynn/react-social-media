@@ -36,7 +36,7 @@ const addVote = async (req, res) => {
 
 const topVotedImages = async (req, res) => {
     try {
-        let topImages = await db.any("SELECT picture, COUNT(votes.voter_id) AS total_votes FROM pictures JOIN votes ON votes.picture_id = pictures.id GROUP BY picture ORDER BY total_votes DESC LIMIT 10");
+        let topImages = await db.any("SELECT picture, COUNT(votes.picture_id) AS total_votes FROM pictures JOIN votes ON votes.picture_id = pictures.id GROUP BY picture ORDER BY total_votes DESC LIMIT 10");
         res.status(200).json({
             status: "Success",
             message: "Retrieved top voted images",
@@ -53,7 +53,7 @@ const topVotedImages = async (req, res) => {
 
 const findMaxVotes = async (req, res) => {
     try {
-        let maxVote = await db.any("SELECT p.picture, COUNT(v.voter_id) AS total_votes FROM pictures p JOIN votes v ON v.picture_id = p.id GROUP BY p.picture ORDER BY total_votes DESC LIMIT 1");
+        let maxVote = await db.any("SELECT p.picture, COUNT(v.picture_id) AS total_votes FROM pictures p JOIN votes v ON v.picture_id = p.id GROUP BY p.picture ORDER BY total_votes DESC LIMIT 1");
         res.status(200).json({
             status: "Success ",
             message: "Max votes found",
