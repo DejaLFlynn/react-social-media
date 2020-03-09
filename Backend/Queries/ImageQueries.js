@@ -9,8 +9,8 @@ const createImage = async (req, res) => {
           payload: newImage
        })
     } catch (err){
-       res.json({
-          status: "error",
+      res.status(404).json({
+         status: err,
           message: "picture was not created",
           payload: null
        })
@@ -25,8 +25,8 @@ const createImage = async (req, res) => {
        })
     } catch (err){
        console.log(err)
-       res.json({
-          status: "error",
+       res.status(404).json({
+         status: err,
           message: "picture was not deleted",
        })
     }

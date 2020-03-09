@@ -9,9 +9,8 @@ const getVote = async (req, res) => {
             payload: vote
         })
     } catch (err) {
-        console.log("get vote", err)
         res.status(404).json({
-            status:"Error",
+            status: err,
             message: "Couldn't find vote",
             payload: null
         })
@@ -27,9 +26,8 @@ const addVote = async (req, res) => {
             payload: addedVote
         })
     } catch (err) {
-        console.log(err)
         res.status(404).json({
-            status: "Error",
+            status: err,
             message: "Could not add vote",
             payload: null
         })
@@ -46,7 +44,7 @@ const topVotedImages = async (req, res) => {
         })
     } catch (err) {
         res.status(404).json({
-            status: "Error",
+            status: err,
             message: "Couldn't find top images",
             payload: null
         })
@@ -62,9 +60,8 @@ const findMaxVotes = async (req, res) => {
             payload: maxVote
         })
     } catch (err) {
-        console.log(err)
         res.status(404).json({
-            status: "Error",
+            status: err,
             message: "Couldn't find max vote",
             payload: null
         })
