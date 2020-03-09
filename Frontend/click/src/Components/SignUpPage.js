@@ -66,3 +66,17 @@ const SignUpPage =({onLogin})=>{
 
 }
 export default SignUpPage;
+
+
+
+
+// onFirstNameBlur = () => {
+//   const { firstName } = this.state;  const firstNameError = this.validateName( firstName );  return this.setState({ firstNameError });
+// };
+
+// validateName = name => {
+//   const regex = /[A-Za-z]{3,}/;
+//   return !regex.test(name)
+//      ? "The name must contain at least three letters..."
+//      : "";
+}
