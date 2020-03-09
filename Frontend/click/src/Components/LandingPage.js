@@ -17,7 +17,10 @@ const LandingPage = ({onLogin}) => {
         let res = await axios.get(`http://localhost:4000/users/${username.value}`)
         debugger
         if (res) {
-          onLogin()}
+          sessionStorage.setItem("username", username.value);
+          sessionStorage.setItem("id", res.data.user.id)
+          onLogin()
+        }
       }catch(error){
         setError("Please Enter a Valid Username or Sign the F*ck Up")
       }
