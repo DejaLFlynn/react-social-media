@@ -64,28 +64,28 @@ fieldset{border-width:0; padding:0; margin:0;
 
 }
 .signInBtn{
-    padding: 15px;
+    padding: 10px;
     background-color: #035EDC;
     color: orange;
-    font-size: 20px;
+    font-size: 25px;
     border-radius: 10%;
 }
 .signInBtn:hover{
     background-color: rgb(242, 24, 202);
     color: white;
 }
-.signUpBtn{
-    padding: 15px;
-    background-color: rgb(173, 255, 47);
-    color: blueviolet;
+.signUpLink{
     font-size: 30px;
-    border-radius: 10%;
+    color: #C200A1;
 }
-.signUpBtn:hover{
-    background-color: orange;
-    color: #035EDC;
+.signUpLink:hover{
+    color: orange;
 }
 .topPic{
     width: 300px;
     height: 300px;
+}
+.userInputs{
+
+
 }

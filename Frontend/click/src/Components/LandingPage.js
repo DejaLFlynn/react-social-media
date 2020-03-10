@@ -37,8 +37,8 @@ const LandingPage = ({onLogin}) => {
         const imageUrl = `http://localhost:4000/votes`
       
         try{
-            let res = await axios.get(imageUrl)
-            setImages(res.data.payload[0].picture)
+            let res = await axios.get(imageUrl);
+            setImages(res.data.payload[0].picture);
         }catch(error){
             setImages("")
         }
@@ -69,11 +69,11 @@ const LandingPage = ({onLogin}) => {
               <div className="signIn"> 
                 <form onSubmit={handleSubmit}>
 
-                    <Input placeholder={"Enter Username"} input={username}/>
+                    <Input className="userInputs" placeholder={"Enter Username"} input={username}/>
                   
                   <br></br>
   
-                    <Input placeholder={"Enter Email"} input={email}/>  
+                    <Input className="userInputs" placeholder={"Enter Email"} input={email}/>  
                 
                   <br></br>
                   
@@ -81,7 +81,7 @@ const LandingPage = ({onLogin}) => {
                   
                   <br></br>
                   
-                  <Link to={'/SignUp'}>Sign Up</Link>
+                  <Link to={'/SignUp'} className="signUpLink">Sign Up</Link>
                 
                 </form>
 
