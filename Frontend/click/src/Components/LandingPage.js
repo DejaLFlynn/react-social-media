@@ -16,7 +16,7 @@ const LandingPage = ({onLogin}) => {
       event.preventDefault()
       try{
         let res = await axios.get(`http://localhost:4000/users/${username.value}`)
-        debugger
+    
         if (res) {
           sessionStorage.setItem("username", username.value);
           sessionStorage.setItem("id", res.data.payload.id)
