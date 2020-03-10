@@ -65,16 +65,19 @@ const LandingPage = ({onLogin}) => {
               <div className="signIn"> 
                 <form onSubmit={handleSubmit}>
 
-                <label> User Name:
-                  <input type="text"name={"username"}{...username}/>
-                </label>
-                <br></br>
-                <label> email:
-                  <input type="text"name={"email"}{...email}/>
-                </label>
-                <button type="submit"></button>
+                  <label> User Name:
+                    <input type="text"name={"username"}{...username}/>
+                  </label>
+                  <br></br>
+                  <label> Email:
+                    <input type="text"name={"email"}{...email}/>
+                  </label>
+                  <br></br>
+                  <button className="signInBtn" type="submit">Sign In</button>
+                  <br></br>
+                  <button className="signUpBtn">Sign Up</button>
                 </form>
-                
+
               </div>
 
             </div>
