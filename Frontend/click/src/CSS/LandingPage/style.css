@@ -31,46 +31,61 @@ fieldset{border-width:0; padding:0; margin:0;
 }
 .signIn{
     grid-area: 2/2/3/3;
-    background-color: white;
+    background-color: rgb(9, 212, 212);
+    color: hotpink;
     width: 350px;
     float: right;
     height: 300px;
     text-align: center;
     padding: 60px;
     border: 10px solid #8cff20;
-    border-radius: 50px 20px / 10px 40px;
+    border-radius: 15%;
     -webkit-box-shadow: 24px 23px 16px 10px #8BFF5A; 
     box-shadow: 24px 23px 16px 10px #8BFF5A;
+
 
 }
 .header{
     grid-area: 1/1/2/3;
-    background-color: indigo;
+    background-color: #C200A1;
     height: 40%;
     width: 100%;
 
 }
 .popularPic{
     grid-area: 2/1/3/2;
-    background-color: hotpink;
+    background-color: rgb(173, 255, 47);
+    /* border: 10px solid #00DDD6; */
     width: 350px;
     float: left;
     height: 300px;
-    -webkit-box-shadow: 24px 23px 16px 10px #8DE0FF; 
-    box-shadow: 24px 23px 16px 10px #8DE0FF;
+    -webkit-box-shadow: 24px 23px 16px 10px #00DDD6; 
+    box-shadow: 24px 23px 16px 10px #00DDD6;
 
 }
 .signInBtn{
     padding: 15px;
-    background-color: rgb(255, 175, 47);
-    color: blue;
+    background-color: #035EDC;
+    color: orange;
+    font-size: 20px;
+    border-radius: 10%;
+}
+.signInBtn:hover{
+    background-color: rgb(242, 24, 202);
+    color: white;
 }
 .signUpBtn{
     padding: 15px;
     background-color: rgb(173, 255, 47);
     color: blueviolet;
+    font-size: 30px;
+    border-radius: 10%;
+}
+.signUpBtn:hover{
+    background-color: orange;
+    color: #035EDC;
 }
 .topPic{
-    width:300px;
+    width: 300px;
     height: 300px;
 }
