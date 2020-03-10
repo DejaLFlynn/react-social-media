@@ -1,7 +1,8 @@
 const imageHashtags = require('express').Router({mergeParams: true});
-const { getRandomHashtags, createHashtag } = require("../../../Queries/HashtagQueries");
+const { getTwoRandPics, createHashtag, getRandPicByHashtags } = require("../../../Queries/HashtagQueries");
 
-imageHashtags.get("/", getRandomHashtags);
+imageHashtags.get("/", getTwoRandPics);
+imageHashtags.get("/:search", getRandPicByHashtags);
 imageHashtags.post("/", createHashtag);
 
 

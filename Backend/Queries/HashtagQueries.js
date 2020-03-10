@@ -17,7 +17,7 @@ const createHashtag = async (req, res) => {
     }
 }
 
-const getRandomHashtags = async (req, res) => {
+const getTwoRandPics = async (req, res) => {
     try {
         let hashtags = await db.any("SELECT p.picture, ARRAY_AGG (h.body) user_hashtags FROM pictures p JOIN hashtags h ON h.picture_id = p.id GROUP BY p.picture, p.id ORDER BY random() LIMIT 2");
         res.status(200).json({
@@ -33,6 +33,24 @@ const getRandomHashtags = async (req, res) => {
         })
     }
 }
+const getRandPicByHashtags = async (req, res) => {
+    try {
+        let hashtags = await db.any("SELECT p.picture, h.body FROM pictures p JOIN hashtags h ON h.picture_id = p.id GROUP BY p.picture, p.id, h.body HAVING h.body = $1 ORDER BY random() LIMIT 10", req.params.search);
+        res.status(200).json({
+            status: "Success",
+            message: "Found random images based on specified hashtag",
+            payload: hashtags
+        })
+    } catch (err) {
+        res.status(404).json({
+            status: err,
+            message: "Could not find any images",
+            payload: null
+        })
+    }
+}
+
+
 
 const searchHashtag = async (req, res) => {
     try {
@@ -68,4 +86,4 @@ const imagesByHashtag = async (req, res) => {
     }
 }
 
-module.exports = { createHashtag, getRandomHashtags, searchHashtag, imagesByHashtag };
+module.exports = { createHashtag, getTwoRandPics, getRandPicByHashtags, searchHashtag, imagesByHashtag };
