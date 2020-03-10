@@ -6,7 +6,7 @@ import { useInput } from '../Utilities/CustomHooks'
 import Input from './Input'
 import Error from './Error'
 
-import '../CSS/style.css'
+import '../CSS/LandingPage/style.css'
 
 
 const LandingPage = ({onLogin}) => {
