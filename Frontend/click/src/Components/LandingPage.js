@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useInput } from '../Utilities/CustomHooks'
 import Error from './Error'
 import axios from "axios"
-import '../CSS/style.css'
+import '../CSS/LandingPage/style.css'
 
 const LandingPage = ({onLogin}) => {
 
@@ -65,13 +65,13 @@ const LandingPage = ({onLogin}) => {
               <div className="signIn"> 
                 <form onSubmit={handleSubmit}>
 
-                  <label> User Name:
-                    <input type="text"name={"username"}{...username}/>
-                  </label>
+                  
+                  <input type="text" placeholder="Enter Username" name={"username"}{...username}/>
+                  
                   <br></br>
-                  <label> Email:
-                    <input type="text"name={"email"}{...email}/>
-                  </label>
+                  
+                  <input type="text" placeholder="Enter Email" name={"email"}{...email}/>
+                  
                   <br></br>
                   <button className="signInBtn" type="submit">Sign In</button>
                   <br></br>
