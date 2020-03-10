@@ -5,8 +5,8 @@ import { useInput } from '../Utilities/CustomHooks'
 
 import Input from './Input'
 import Error from './Error'
-import axios from "axios"
-import '../CSS/LandingPage/style.css'
+
+import '../CSS/style.css'
 
 
 const LandingPage = ({onLogin}) => {
@@ -69,13 +69,12 @@ const LandingPage = ({onLogin}) => {
               <div className="signIn"> 
                 <form onSubmit={handleSubmit}>
 
-                  
-                  <input type="text" placeholder="Enter Username" name={"username"}{...username}/>
+                    <Input placeholder={"Enter Username"} input={username}/>
                   
                   <br></br>
-                  
-                  <input type="text" placeholder="Enter Email" name={"email"}{...email}/>
-                  
+  
+                    <Input placeholder={"Enter Email"} input={email}/>  
+                
                   <br></br>
                   
                   <button className="signInBtn" type="submit">Sign In</button>
