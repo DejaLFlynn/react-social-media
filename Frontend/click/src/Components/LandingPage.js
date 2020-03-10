@@ -1,9 +1,13 @@
 import React, {useState, useEffect} from 'react'
+import axios from "axios"
 import {Link} from 'react-router-dom'
 import { useInput } from '../Utilities/CustomHooks'
+
+import Input from './Input'
 import Error from './Error'
-import axios from "axios"
+
 import '../CSS/style.css'
+
 
 const LandingPage = ({onLogin}) => {
 
@@ -65,24 +69,28 @@ const LandingPage = ({onLogin}) => {
               <div className="signIn"> 
                 <form onSubmit={handleSubmit}>
 
-                  <label> User Name:
-                    <input type="text"name={"username"}{...username}/>
-                  </label>
+                    <Input placeholder={"Enter Username"} input={username}/>
+                  
                   <br></br>
-                  <label> Email:
-                    <input type="text"name={"email"}{...email}/>
-                  </label>
+  
+                    <Input placeholder={"Enter Email"} input={email}/>  
+                
                   <br></br>
+                  
                   <button className="signInBtn" type="submit">Sign In</button>
+                  
                   <br></br>
+                  
                   <Link to={'/SignUp'}>Sign Up</Link>
+                
                 </form>
 
               </div>
 
             </div>
-
+            <div>
             { !error ? <Error message={error}/> : null}
+            </div>
           </div>
 
         </>
