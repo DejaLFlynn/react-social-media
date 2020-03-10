@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import { useInput } from '../Utilities/CustomHooks'
 import Error from './Error'
 import axios from "axios"
@@ -33,7 +34,6 @@ const LandingPage = ({onLogin}) => {
       
         try{
             let res = await axios.get(imageUrl)
-            debugger
             setImages(res.data.payload[0].picture)
         }catch(error){
             setImages("")
@@ -75,13 +75,12 @@ const LandingPage = ({onLogin}) => {
                   <br></br>
                   <button className="signInBtn" type="submit">Sign In</button>
                   <br></br>
-                  <button className="signUpBtn">Sign Up</button>
+                  <Link to={'/SignUp'}>Sign Up</Link>
                 </form>
 
               </div>
 
             </div>
-
 
             { !error ? <Error message={error}/> : null}
           </div>

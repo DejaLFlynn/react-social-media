@@ -4,17 +4,17 @@ import axios from 'axios'
 
 const ImageUpload = () => {
     
-    cosnt [image, setImage] = useState(null)
+    const [image, setImage] = useState(null)
 
-    const handleUpload = async () => {
+    const handleUpload = async (event) => {
         setImage(event.target.files[0])
     }
 
-    const imageUploadHandler = () => {
-        const file = new FormData()
-        file.append('image', image, image.name)
-        let res = await axios.post(' ', file)
-    }
+    // const imageUploadHandler = () => {
+    //     const file = new FormData()
+    //     file.append('image', image, image.name)
+    //     let res = await axios.post(' ', file)
+    // }
 
     return(
         <form>
@@ -29,6 +29,3 @@ const ImageUpload = () => {
 }
 
 export default ImageUpload
-
-
-event.target.files[0]

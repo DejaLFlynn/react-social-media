@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const multer = require('multer');
 const uploadPath = multer({ destination: '../Frontend/click/Assets/Images' });
-app.use(express.static(__dirname + '/public'))
+//app.use(express.static(__dirname + '/public'))
 
 
 const port = 4000;
