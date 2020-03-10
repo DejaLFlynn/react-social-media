@@ -39,7 +39,7 @@ const topVotedImages = async (req, res) => {
         let topImages = await db.any("SELECT picture, COUNT(votes.picture_id) AS total_votes FROM pictures JOIN votes ON votes.picture_id = pictures.id GROUP BY picture ORDER BY total_votes DESC LIMIT 10");
         res.status(200).json({
             status: "Success",
-            message: "Retrieved top voted images",
+            message: "Retrieved top 10 voted images",
             payload: topImages
         })
     } catch (err) {

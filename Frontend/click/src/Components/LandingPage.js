@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useInput } from '../Utilities/CustomHooks'
 import Error from './Error'
 import axios from "axios"
@@ -9,13 +9,14 @@ const LandingPage = ({onLogin}) => {
       const username = useInput("")
       const email = useInput("")
       const [error, setError] = useState("")
+      const [images, setImages] = useState("")
 
     
     const handleSubmit = async (event)=>{
       event.preventDefault()
       try{
         let res = await axios.get(`http://localhost:4000/users/${username.value}`)
-        debugger
+    
         if (res) {
           sessionStorage.setItem("username", username.value);
           sessionStorage.setItem("id", res.data.payload.id)
@@ -27,16 +28,26 @@ const LandingPage = ({onLogin}) => {
 
         
     }
-    const topVotedPic = async()=>{
+    const getTopPic = async()=>{
+        const imageUrl = `http://localhost:4000/votes`
+      
         try{
-            let res = await axios.get(`http://localhost:4000/images`)
-
+            let res = await axios.get(imageUrl)
+            debugger
+            setImages(res.data.payload[0].picture)
         }catch(error){
-            setError("refresh or error for images")
-
+            setImages("")
         }
     }
+  
+    useEffect(()=>{
 
+            getTopPic()
+   
+    },[])
+   
+
+     
     return (
         <>
 
@@ -48,22 +59,25 @@ const LandingPage = ({onLogin}) => {
               </div>
               
               <div className="popularPic">
-
+              <img src={images} alt={""}  className="topPic"/>
               </div>
               
-              <div className="signIn">
+              <div className="signIn"> 
                 <form onSubmit={handleSubmit}>
 
-                <label> User Name:
-                  <input type="text"name={"username"}{...username}/>
-                </label>
-                <br></br>
-                <label> email:
-                  <input type="text"name={"email"}{...email}/>
-                </label>
-                <button type="submit"></button>
+                  <label> User Name:
+                    <input type="text"name={"username"}{...username}/>
+                  </label>
+                  <br></br>
+                  <label> Email:
+                    <input type="text"name={"email"}{...email}/>
+                  </label>
+                  <br></br>
+                  <button className="signInBtn" type="submit">Sign In</button>
+                  <br></br>
+                  <button className="signUpBtn">Sign Up</button>
                 </form>
-                
+
               </div>
 
             </div>
