@@ -23,7 +23,7 @@ const Authorization = () => {
                 <Route exact path={"/"}>
                     <LandingPage onLogin={handleAuthorization}/>
                 </Route>
-                <Route path ={"/SignUp"}>
+                <Route path={"/SignUp"}>
                     <SignUp onLogin={handleAuthorization}/>
                 </Route>
                 </Switch>

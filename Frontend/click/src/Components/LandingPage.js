@@ -1,8 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import { useInput } from '../Utilities/CustomHooks'
-import Error from './Error'
 import axios from "axios"
+import {Link} from 'react-router-dom'
+import { useInput } from '../Utilities/CustomHooks'
+
+import Input from './Input'
+import Error from './Error'
+
 import '../CSS/LandingPage/style.css'
+
 
 const LandingPage = ({onLogin}) => {
 
@@ -33,7 +38,6 @@ const LandingPage = ({onLogin}) => {
       
         try{
             let res = await axios.get(imageUrl)
-            debugger
             setImages(res.data.payload[0].picture)
         }catch(error){
             setImages("")
@@ -65,25 +69,28 @@ const LandingPage = ({onLogin}) => {
               <div className="signIn"> 
                 <form onSubmit={handleSubmit}>
 
-                  
-                  <input type="text" placeholder="Enter Username" name={"username"}{...username}/>
-                  
-                  <br></br>
-                  
-                  <input type="text" placeholder="Enter Email" name={"email"}{...email}/>
+                    <Input placeholder={"Enter Username"} input={username}/>
                   
                   <br></br>
+  
+                    <Input placeholder={"Enter Email"} input={email}/>  
+                
+                  <br></br>
+                  
                   <button className="signInBtn" type="submit">Sign In</button>
+                  
                   <br></br>
-                  <button className="signUpBtn">Sign Up</button>
+                  
+                  <Link to={'/SignUp'}>Sign Up</Link>
+                
                 </form>
 
               </div>
 
             </div>
-
-
+            <div>
             { !error ? <Error message={error}/> : null}
+            </div>
           </div>
 
         </>
