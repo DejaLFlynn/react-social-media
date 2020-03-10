@@ -59,7 +59,7 @@ const LandingPage = ({onLogin}) => {
               </div>
               
               <div className="popularPic">
-              <img src={images} alt={""} />
+              <img src={images} alt={""}  className="topPic"/>
               </div>
               
               <div className="signIn"> 
