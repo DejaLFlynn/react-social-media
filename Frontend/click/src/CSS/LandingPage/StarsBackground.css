@@ -1,9 +1,9 @@
 /* Parallax Star Background in CSSA by Saransh Sinha */
 
-html {
+/* .LandingPage {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   overflow: hidden;
-}
+} */
 
 #stars {
   width: 1px;
