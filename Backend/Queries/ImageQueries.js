@@ -1,21 +1,5 @@
 const db =require("../db/db")
 
-const createImage = async (req, res) => {
-    try {
-       let newImage = db.one("INSERT INTO pictures (picture) VALUES(${picture})", req.body);
-       res.status(200).json({
-          status: "success",
-          message: "A new picture is created ",
-          payload: newImage
-       })
-    } catch (err){
-      res.status(404).json({
-         status: err,
-          message: "picture was not created",
-          payload: null
-       })
-    }
- }
  const deleteImage = async (req, res) => {
     try {
        await db.none("DELETE FROM pictures WHERE id = $1", req.params.id);
@@ -33,4 +17,4 @@ const createImage = async (req, res) => {
  }
 
 
-module.exports = { createImage, deleteImage }
+module.exports = { deleteImage }

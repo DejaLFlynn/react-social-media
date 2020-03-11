@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 
 const multer = require('multer');
 const uploadPath = multer({ dest: '../Frontend/click/Assets/Images' });
-//app.use(express.static(__dirname + '/../Frontend/click/Assets'))
 
 
 const port = 4000;
@@ -16,6 +15,7 @@ const hashtagsRouter = require("./Routes/Hashtags/Hashtags")
 
 
 const app = express();
+app.use(express.static(__dirname + '/../Frontend/click/Assets'))
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
