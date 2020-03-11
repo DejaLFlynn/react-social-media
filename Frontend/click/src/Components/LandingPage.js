@@ -6,8 +6,8 @@ import { useInput } from "../Utilities/CustomHooks";
 import Input from "./Input";
 import Error from "./Error";
 
-import "../CSS/LandingPage/style.css";
 import "../CSS/LandingPage/StarsBackground.css"
+import "../CSS/LandingPage/LandingPage.css";
 
 const LandingPage = ({ onLogin }) => {
   const username = useInput("");
