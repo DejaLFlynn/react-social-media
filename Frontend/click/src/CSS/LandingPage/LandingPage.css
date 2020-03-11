@@ -51,20 +51,16 @@ fieldset {
   width: 100%;
   font-family: neon;
   background-color: black;
-}
-.Container {
-  /* width: 800px; */
-  width: 100%;
-  /* margin: auto; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 2fr);
   grid-column-gap: 0px;
   grid-row-gap: 40px;
   grid-template-areas:
     "header header"
     "popularPic signIn";
 }
+
 .signIn {
   z-index: 1;
   grid-area: 2/2/3/3;
@@ -77,7 +73,6 @@ fieldset {
   text-align: center;
   padding: 60px;
   border: 10px solid #8cff20;
-  border-radius: 15%;
   -webkit-box-shadow: 24px 23px 16px 10px #8bff5a;
   box-shadow: 24px 23px 16px 10px #8bff5a;
 }
