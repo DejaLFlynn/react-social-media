@@ -52,7 +52,9 @@ INSERT INTO pictures (user_id, picture)
    (3, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-171582169.jpg'),
    (3, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-1058317014-760x506.jpg'),
    (4, 'https://digitalsynopsis.com/wp-content/uploads/2017/12/funny-agency-life-creative-designer-copywriter-memes-1.jpg'),
-   (4, 'https://ichef.bbci.co.uk/news/976/cpsprodpb/D6E6/production/_109241055_mediaitem109241054.jpg');
+   (4, 'https://ichef.bbci.co.uk/news/976/cpsprodpb/D6E6/production/_109241055_mediaitem109241054.jpg'),
+   (2, 'https://www.sheknows.com/wp-content/uploads/2018/08/psyyqkxg08z2lousgib9.gif');
+
 
 INSERT INTO hashtags (picture_id, body)
    VALUES 
@@ -73,7 +75,10 @@ INSERT INTO hashtags (picture_id, body)
    (6, 'babybeenherebefore'),
    (7, 'wtf'),
    (7, 'funnyhorse'),
-   (8, 'thematrix');
+   (8, 'thematrix'),
+   (9, 'election'),
+   (9, 'biden'),
+   (9, 'fail');
 
 INSERT INTO votes (voter_id, picture_id)
    VALUES 
@@ -83,9 +88,13 @@ INSERT INTO votes (voter_id, picture_id)
    (2, 6),
    (2, 8),
    (3, 2),
-   (4, 2),
+   (4, 1),
    (4, 1),
    (3, 6),
    (1, 6),
-   (3, 3);
+   (3, 3),
+   (1, 9),
+   (2, 9),
+   (3, 9),
+   (4, 9);
 

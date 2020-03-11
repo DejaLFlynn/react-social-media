@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useInput } from "../Utilities/CustomHooks";
-
 import Input from "./Input";
 import Error from "./Error";
+
 
 import "../CSS/LandingPage/StarsBackground.css"
 import "../CSS/LandingPage/LandingPage.css";
@@ -36,7 +36,7 @@ const LandingPage = ({ onLogin }) => {
 
     try {
       let res = await axios.get(imageUrl);
-      setImages(res.data.payload[0].picture);
+      setImages(res.data.payload[0].picture)
     } catch (error) {
       setImages("");
     }
