@@ -57,9 +57,9 @@ const LandingPage = ({ onLogin }) => {
             <span className="LogoLetter">C</span>lick me til I scream!
           </div>
 
-          <div className="popularPic">
-            <div className="topPic">
-              <img src={images} alt={""} className="pic" />
+          <div className="popularImageContainer">
+            <div className="popularImage">
+              <img src={images} alt={""} className="image" />
               <p>VOTES: 1,456,504</p>
             </div>
           </div>
@@ -68,27 +68,29 @@ const LandingPage = ({ onLogin }) => {
 
           <div className="signInForm">
             <form onSubmit={handleSubmit}>
+              
+              <div>
               <Input
                 className={"userInputs"}
                 placeholder={"Enter Username"}
                 input={username}
               />
+              </div>
 
-              <br></br>
-
+              <div>
               <Input
                 className={"userInputs"}
                 placeholder={"Enter Email"}
                 input={email}
               />
-
-              <br></br>
-
+              </div>
+              
+              <div>
               <button className="signInBtn" type="submit">
                 Sign In
               </button>
+              </div>
 
-              <br></br>
             </form>
               
           
