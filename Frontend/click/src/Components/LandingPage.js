@@ -26,7 +26,7 @@ const LandingPage = ({ onLogin }) => {
         sessionStorage.setItem("id", res.data.payload.id);
         onLogin();
       }
-    } catch (error) {
+    } catch (err) {
       setError("Please Enter a Valid Username or Sign the F*ck Up");
     }
   };
@@ -89,9 +89,12 @@ const LandingPage = ({ onLogin }) => {
                 Sign Up
               </Link>
             </form>
+          <div>{error ? <Error className="Error" message={error} /> : null}</div>
+          
           </div>
+        
         </div>
-        <div>{!error ? <Error message={error} /> : null}</div>
+        
         
       
       </div>

@@ -164,3 +164,8 @@ fieldset {
 }
 .userInputs {
 }
+
+.Error {
+  color: red;
+  font-size: 18px;
+}
