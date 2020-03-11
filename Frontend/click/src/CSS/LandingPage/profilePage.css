@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after{box-sizing:border-box;}
+a{text-decoration:underline; color:inherit; cursor:pointer;}
+figure{margin:0;}
+input::-moz-focus-inner {border:0; padding:0; margin:0;}
+ul, ol, dd, li {margin:0; padding:0; list-style:none;}
+h1, h2, h3, h4, h5, h6{margin:0; font-size:inherit; font-weight:inherit;}
+p{margin:0;}
+cite {font-style:normal;}
+fieldset{border-width:0; padding:0; margin:0;
+}
+.Profile{
+    height: 100vh;
+    background-color: black;
+
+}
+.userProfile{
+    border: 5px outset rgb(94, 250, 21);
+}
+.userPics{
+    border: 5px outset rgb(11, 25, 228);
+}
+/* .picGrid{
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+} */
