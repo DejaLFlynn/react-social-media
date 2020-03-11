@@ -53,49 +53,65 @@ const LandingPage = ({ onLogin }) => {
         <div id="stars"></div>
         <div id="stars2"></div> 
         <div id="stars3"></div>
-        <div className="Container">
+        
           <div className="header">
             <span className="LogoLetter">C</span>lick me til I scream!
+            {/* <img className="logo" src={lips} /> */}
           </div>
 
-          <div className="popularPic">
-            <img src={images} alt={""} className="topPic" />
+          <div className="popularImageContainer">
+            <div className="popularImage">
+              <img src={images} alt={""} className="image" />
+              <p>VOTES: 1,456,504</p>
+            </div>
           </div>
 
-          <div className="signIn">
+          <div className ="signIn">
+
+          <div className="signInForm">
+
             <form onSubmit={handleSubmit}>
+              
+              <div>
               <Input
-                className="userInputs"
+                className={"userInputs"}
                 placeholder={"Enter Username"}
                 input={username}
               />
+              </div>
 
-              <br></br>
-
+              <div>
               <Input
-                className="userInputs"
+                className={"userInputs"}
                 placeholder={"Enter Email"}
                 input={email}
               />
+              </div>
 
-              <br></br>
-
+              <div>
               <button className="signInBtn" type="submit">
                 Sign In
               </button>
+              </div>
 
-              <br></br>
-
-              <Link to={"/SignUp"} className="signUpLink">
-                Sign Up
-              </Link>
             </form>
+              
+          
+          <div>{error ? <Error className="Error" message={error} /> : null}</div>
+          
+          <div className="signUpLink">
+          <Link to={"/SignUp"} className="signUpLink">
+            Sign Up
+          </Link>
           </div>
-        </div>
-        <div>{!error ? <Error message={error} /> : null}</div>
+          </div>
+              
+
+          </div>
         
-      
-      </div>
+        </div>
+        
+
     </>
   );
 };
