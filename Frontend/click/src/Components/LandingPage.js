@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useInput } from "../Utilities/CustomHooks";
+import lips from "../Images/ClickLips.png"
 
 import Input from "./Input";
 import Error from "./Error";
@@ -55,6 +56,7 @@ const LandingPage = ({ onLogin }) => {
         
           <div className="header">
             <span className="LogoLetter">C</span>lick me til I scream!
+            {/* <img className="logo" src={lips} /> */}
           </div>
 
           <div className="popularImageContainer">
@@ -67,6 +69,7 @@ const LandingPage = ({ onLogin }) => {
           <div className ="signIn">
 
           <div className="signInForm">
+
             <form onSubmit={handleSubmit}>
               
               <div>
@@ -84,7 +87,7 @@ const LandingPage = ({ onLogin }) => {
                 input={email}
               />
               </div>
-              
+
               <div>
               <button className="signInBtn" type="submit">
                 Sign In

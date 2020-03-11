@@ -99,6 +99,11 @@ fieldset {
   padding-right: -100px;
 }
 
+.logo{
+  height: 200px;
+  width: 200px
+}
+
 @keyframes header {
   0%,
   100% {
