@@ -2,7 +2,7 @@ const db = require('../db/db');
 
 const getUser = async (req, res) => {
    try {
-      let user = await db.any("SELECT * FROM users WHERE username = $1", req.params.username)
+      let user = await db.one("SELECT * FROM users WHERE username = $1", req.params.username)
       res.status(200).json({
          status: "success",
          message: "retrieved single user",
