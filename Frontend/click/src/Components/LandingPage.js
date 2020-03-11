@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useInput } from "../Utilities/CustomHooks";
-import lips from "../Images/ClickLips.png"
 
 import Input from "./Input";
 import Error from "./Error";
 
 import "../CSS/LandingPage/StarsBackground.css"
-import "../CSS/LandingPage/LandingPage.css";
+import "../CSS/LandingPage/style.css";
 
 const LandingPage = ({ onLogin }) => {
   const username = useInput("");
@@ -28,6 +27,7 @@ const LandingPage = ({ onLogin }) => {
         onLogin();
       }
     } catch (err) {
+      console.log(error)
       setError("Please Enter a Valid Username or Sign the F*ck Up");
     }
   };
