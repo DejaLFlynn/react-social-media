@@ -5,7 +5,7 @@ const Profile = () => {
     const [tenImages, setTenImages]=useState("")
     const [users, setUsers]=useState("")
     const getUserProfile =async()=>{
-        const userProfile =`http://localhost:4000/users/:id`
+        const userProfile =`http://localhost:4000/users/${sessionStorage.username}`
         try{
             let res= await axios.get(userProfile)
             setUsers(res.data)
