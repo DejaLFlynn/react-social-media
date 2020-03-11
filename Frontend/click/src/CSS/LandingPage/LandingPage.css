@@ -117,16 +117,18 @@ fieldset {
   grid-area: popularPic;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-right: 10%
 }
 
 .signIn {
   z-index: 1;
   grid-area: signIn;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
+  margin-left: 10%
 }
 
 .signInForm {
@@ -192,11 +194,13 @@ form {
 .pic {
   width: 400px;
   height: 400px;
+  border-radius: 5px;
 }
 
 .userInputs {
   width: 100%;
   font-size: 25px;
+  color: white;
   line-height: 2em;
   border-radius: 5px;
   background-color: transparent;
