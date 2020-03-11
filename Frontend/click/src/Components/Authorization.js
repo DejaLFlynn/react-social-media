@@ -14,7 +14,6 @@ const Authorization = () => {
 
     const handleAuthorization = () => {
         setAuthorization(true)
-        console.log(authorization)
     }
 
     return (
