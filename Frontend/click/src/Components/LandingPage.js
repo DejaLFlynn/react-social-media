@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useInput } from "../Utilities/CustomHooks";
-
 import Input from "./Input";
 import Error from "./Error";
+
 
 import "../CSS/LandingPage/style.css";
 import "../CSS/LandingPage/StarsBackground.css"
@@ -26,7 +26,8 @@ const LandingPage = ({ onLogin }) => {
         sessionStorage.setItem("id", res.data.payload.id);
         onLogin();
       }
-    } catch (error) {
+    } catch (err) {
+      console.log(error)
       setError("Please Enter a Valid Username or Sign the F*ck Up");
     }
   };
@@ -35,7 +36,7 @@ const LandingPage = ({ onLogin }) => {
 
     try {
       let res = await axios.get(imageUrl);
-      setImages(res.data.payload[0].picture);
+      setImages(res.data.payload[0].picture)
     } catch (error) {
       setImages("");
     }
