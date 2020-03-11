@@ -7,6 +7,7 @@ import Input from "./Input";
 import Error from "./Error";
 
 import "../CSS/LandingPage/style.css";
+import "../CSS/LandingPage/StarsBackground.css"
 
 const LandingPage = ({ onLogin }) => {
   const username = useInput("");
@@ -18,8 +19,7 @@ const LandingPage = ({ onLogin }) => {
     event.preventDefault();
     try {
       let res = await axios.get(
-        `http://localhost:4000/users/${username.value}`
-      );
+        `http://localhost:4000/users/${username.value}`);
 
       if (res) {
         sessionStorage.setItem("username", username.value);
@@ -44,10 +44,14 @@ const LandingPage = ({ onLogin }) => {
   useEffect(() => {
     getTopPic();
   }, []);
-
+  
   return (
     <>
+      
       <div className="LandingPage">
+        <div id="stars"></div>
+        <div id="stars2"></div> 
+        <div id="stars3"></div>
         <div className="Container">
           <div className="header">
             <span className="LogoLetter">C</span>lick me til I scream!
@@ -88,6 +92,8 @@ const LandingPage = ({ onLogin }) => {
           </div>
         </div>
         <div>{!error ? <Error message={error} /> : null}</div>
+        
+      
       </div>
     </>
   );
