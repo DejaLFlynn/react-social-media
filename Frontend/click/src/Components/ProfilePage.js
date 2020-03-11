@@ -34,6 +34,8 @@ useEffect(()=>{
     return (
    
         <>
+        <div className ="Profile">
+            
         <div className="userPics">
         User Pics
         <img src={tenImages} alt={""}  className="topPic"/>
@@ -41,6 +43,7 @@ useEffect(()=>{
         <div className="userProfile">
         User Pics
         <img src={users} alt={""}  className="topPic"/>
+        </div>
         </div>
         </>
     )
