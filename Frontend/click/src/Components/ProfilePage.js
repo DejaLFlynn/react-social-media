@@ -3,13 +3,15 @@ import axios from "axios"
 import '../CSS/ProfilePage.css'
 
 const Profile = () => {
-    const [images, setImages]=useState("")
-    const [users, setUsers]=useState("")
+    const [images, setImages]=useState("");
+    const [username, setUsername] =useState("");
+    const [users, setUsers]=useState("");
     const getUserProfile =async()=>{
         const userProfile =`http://localhost:4000/users/${sessionStorage.username}`
         try{
             let res= await axios.get(userProfile)
-            setUsers(res.data.payload[0].username)
+            setUsername(res.data.payload[0].username)
+            setUsers(res.data.payload[0].profile_pic)
             debugger
 
         }catch(error){  
@@ -23,11 +25,11 @@ const Profile = () => {
         let res = await axios.get(userImages)
         setImages(res.data.payload[0].picture)
     }catch(error){
-        setTenImages("")
+        setImages("")
     }
 }
 useEffect(()=>{
-    getTenPics()
+    getImages()
     getUserProfile()
 }, [])
 
@@ -38,12 +40,31 @@ useEffect(()=>{
         <div className ="Profile">
             
         <div className="userProfile">
+        <p>Hello {username}!!!</p>
         User Pics
         <img src={users} alt={""}  className="topPic"/>
         </div>
         <div className="userPics">
         User Pics
-        <img src={tenImages} alt={""}  className="topPic"/>
+        <table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+        <img src={images} alt={""}  className="topPic"/>
         </div>
         </div>
         </>
