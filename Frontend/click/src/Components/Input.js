@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Input = ({placeholder, input}) => {
+const Input = ({...props}) => {
     
     return(
-        <input type="text" placeholder={placeholder} {...input}/>
+        <input className={props.className} type="text" placeholder={props.placeholder} {...props.input}/>
     )       
 }
 

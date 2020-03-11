@@ -58,13 +58,18 @@ const LandingPage = ({ onLogin }) => {
           </div>
 
           <div className="popularPic">
-            <img src={images} alt={""} className="topPic" />
+            <div className="topPic">
+              <img src={images} alt={""} className="pic" />
+              <p>VOTES: 1,456,504</p>
+            </div>
           </div>
 
-          <div className="signIn">
+          <div className ="signIn">
+
+          <div className="signInForm">
             <form onSubmit={handleSubmit}>
               <Input
-                className="userInputs"
+                className={"userInputs"}
                 placeholder={"Enter Username"}
                 input={username}
               />
@@ -72,7 +77,7 @@ const LandingPage = ({ onLogin }) => {
               <br></br>
 
               <Input
-                className="userInputs"
+                className={"userInputs"}
                 placeholder={"Enter Email"}
                 input={email}
               />
@@ -84,13 +89,19 @@ const LandingPage = ({ onLogin }) => {
               </button>
 
               <br></br>
-
-              <Link to={"/SignUp"} className="signUpLink">
-                Sign Up
-              </Link>
             </form>
+              
+          
           <div>{error ? <Error className="Error" message={error} /> : null}</div>
           
+          <div className="signUpLink">
+          <Link to={"/SignUp"} className="signUpLink">
+            Sign Up
+          </Link>
+          </div>
+          </div>
+              
+
           </div>
         
         </div>
