@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import axios from "axios"
-import '../CSS/ProfilePage.css'
+import Image from "./Image"
+import '../CSS/LandingPage/profilePage.css'
 
 const Profile = () => {
-    const [images, setImages]=useState("");
+    const [images, setImages]=useState([]);
     const [username, setUsername] =useState("");
     const [users, setUsers]=useState("");
     const getUserProfile =async()=>{
@@ -12,7 +13,6 @@ const Profile = () => {
             let res= await axios.get(userProfile)
             setUsername(res.data.payload[0].username)
             setUsers(res.data.payload[0].profile_pic)
-            debugger
 
         }catch(error){  
             setUsers("")
@@ -23,9 +23,10 @@ const Profile = () => {
     const userImages = `http://localhost:4000/users/${sessionStorage.id}/images`
     try{
         let res = await axios.get(userImages)
-        setImages(res.data.payload[0].picture)
+        debugger
+        setImages(res.data.payload[0].arr_pics)
     }catch(error){
-        setImages("")
+        setImages([])
     }
 }
 useEffect(()=>{
@@ -33,6 +34,10 @@ useEffect(()=>{
     getUserProfile()
 }, [])
 
+let userPics = images.map(pic => {
+    debugger
+    return <Image image={pic} key={pic} />;
+  });
 
     return (
    
@@ -46,7 +51,8 @@ useEffect(()=>{
         </div>
         <div className="userPics">
         User Pics
-        <table>
+        {userPics}
+        {/* <table>
 <tbody>
 <tr>
 <td>&nbsp;</td>
@@ -64,7 +70,7 @@ useEffect(()=>{
 </tr>
 </tbody>
 </table>
-        <img src={images} alt={""}  className="topPic"/>
+        <img src={images} alt={""}  className="topPic"/> */}
         </div>
         </div>
         </>

@@ -1,10 +1,10 @@
-// import React from 'react'
+import React from 'react'
 
-// const Image = ({image}) => {
+const Image = ({image}) => {
     
-//     return(
-//         <img src={image} alt=""/>
-//     )       
-// }
+    return(
+        <img src={image} alt=""/>
+    )       
+}
 
-// export default Image
+export default Image
