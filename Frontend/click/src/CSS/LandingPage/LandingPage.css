@@ -61,9 +61,6 @@ fieldset {
     "popularPic signIn";
 }
 
-
-
-
 .header {
   z-index: 1;
   grid-area: header;
@@ -95,25 +92,25 @@ fieldset {
   font-family: PWFreshPaintings;
   color: hotpink;
   font-size: 180px;
-  margin-left: 50px; 
+  margin-left: 50px;
   padding-right: -100px;
 }
 
-.logo{
+.logo {
   height: 200px;
-  width: 200px
+  width: 200px;
 }
 
 @keyframes header {
   0%,
   100% {
     text-shadow: 0 0 1vw #fa1c16, 0 0 3vw #fa1c16, 0 0 10vw #fa1c16,
-    0 0 10vw #fa1c16, 0 0 0.4vw #fed128, 0.5vw 0.5vw 0.1vw #806914;
+      0 0 10vw #fa1c16, 0 0 0.4vw #fed128, 0.5vw 0.5vw 0.1vw #806914;
     color: #fed128;
   }
   50% {
     text-shadow: 0 0 0.5vw #800e0b, 0 0 1.5vw #800e0b, 0 0 5vw #800e0b,
-    0 0 5vw #800e0b, 0 0 0.2vw #800e0b, 0.5vw 0.5vw 0.1vw #40340a;
+      0 0 5vw #800e0b, 0 0 0.2vw #800e0b, 0.5vw 0.5vw 0.1vw #40340a;
     color: #806914;
   }
 }
@@ -123,7 +120,7 @@ fieldset {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 10%
+  margin-right: 10%;
 }
 .popularImage {
   width: 350px;
@@ -137,7 +134,8 @@ fieldset {
   font-size: 20px;
   border: 10px solid rgba(173, 255, 47, 0);
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 10px #00ddd6, 0px 0px 30px 20px hotpink, inset 0px 0px 10px 10px #00ddd6, inset 0px 0px 30px 20px hotpink;
+  box-shadow: 0px 0px 10px 10px #00ddd6, 0px 0px 30px 20px hotpink,
+    inset 0px 0px 10px 10px #00ddd6, inset 0px 0px 30px 20px hotpink;
 }
 
 .image {
@@ -153,7 +151,8 @@ fieldset {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  margin-left: 10%
+  margin-left: 10%;
+  padding-top: 15px;
 }
 
 .signInForm {
@@ -169,7 +168,8 @@ fieldset {
   font-size: 18px;
   border: 10px solid rgba(173, 255, 47, 0);
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 10px #00ddd6, 0px 0px 30px 20px hotpink, inset 0px 0px 10px 10px #00ddd6, inset 0px 0px 30px 20px hotpink;
+  box-shadow: 0px 0px 10px 10px #00ddd6, 0px 0px 30px 20px hotpink,
+    inset 0px 0px 10px 10px #00ddd6, inset 0px 0px 30px 20px hotpink;
 }
 
 form {
@@ -189,7 +189,7 @@ form {
   border: none;
   border-radius: 5px;
   width: 100%;
-  font-weight: bold
+  font-weight: bold;
 }
 .signInBtn:hover {
   background-color: rgb(242, 24, 202);
@@ -206,7 +206,7 @@ form {
   text-decoration: underline;
 }
 .signInBtn:focus {
-  outline: none
+  outline: none;
 }
 
 .userInputs {
@@ -229,7 +229,6 @@ form {
   outline: none;
   border: 5px solid blueviolet;
 }
-
 
 .Error {
   color: orange;
