@@ -11,8 +11,8 @@ const Profile = () => {
         const userProfile =`http://localhost:4000/users/${sessionStorage.username}`
         try{
             let res= await axios.get(userProfile)
-            setUsername(res.data.payload[0].username)
-            setUsers(res.data.payload[0].profile_pic)
+            setUsername(res.data.payload.username)
+            setUsers(res.data.payload.profile_pic)
 
         }catch(error){  
             setUsers("")
@@ -23,7 +23,6 @@ const Profile = () => {
     const userImages = `http://localhost:4000/users/${sessionStorage.id}/images`
     try{
         let res = await axios.get(userImages)
-        debugger
         setImages(res.data.payload[0].arr_pics)
     }catch(error){
         setImages([])
@@ -52,25 +51,6 @@ let userPics = images.map(pic => {
         <div className="userPics">
         User Pics
         {userPics}
-        {/* <table>
-<tbody>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-        <img src={images} alt={""}  className="topPic"/> */}
         </div>
         </div>
         </>
