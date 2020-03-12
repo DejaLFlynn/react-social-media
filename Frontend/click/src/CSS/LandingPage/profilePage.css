@@ -45,16 +45,7 @@ img{
   font-size: 18px;
   border: 10px solid rgba(173, 255, 47, 0);
   border-radius: 5px;
-  
 
-  
 
 }
 
-/* .picGrid{
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(5, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-} */
