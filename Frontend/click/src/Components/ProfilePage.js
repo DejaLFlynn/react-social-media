@@ -3,6 +3,7 @@ import axios from "axios"
 import Image from "./Image"
 import '../CSS/LandingPage/profilePage.css'
 
+
 const Profile = () => {
     const [images, setImages]=useState([]);
     const [username, setUsername] =useState("");
@@ -41,7 +42,7 @@ let userPics = images.map(pic => {
     return (
    
         <>
-    <div className ="Profile">
+        <div className ="Profile">
         User Pics
         <div className="userProfile">
         <p>Hello {username}!!!</p>
