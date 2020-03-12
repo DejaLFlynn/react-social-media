@@ -190,7 +190,6 @@ form {
   border-radius: 5px;
   width: 100%;
   font-weight: bold;
-  font-family: potra;
 }
 .signInBtn:hover {
   background-color: rgb(242, 24, 202);
