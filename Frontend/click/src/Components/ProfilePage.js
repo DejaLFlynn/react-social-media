@@ -6,8 +6,10 @@ import '../CSS/LandingPage/profilePage.css'
 
 const Profile = () => {
     const [images, setImages]=useState([]);
+    const [totalVotes, setTotalVotes]=useState([]);
     const [username, setUsername] =useState("");
     const [users, setUsers]=useState("");
+
     const getUserProfile =async()=>{
         const userProfile =`http://localhost:4000/users/${sessionStorage.username}`
         try{
@@ -24,7 +26,8 @@ const Profile = () => {
     const userImages = `http://localhost:4000/users/${sessionStorage.id}/images`
     try{
         let res = await axios.get(userImages)
-        setImages(res.data.payload[0].arr_pics)
+        setImages(res.data.payload)
+        setTotalVotes(res.data.payload)
     }catch(error){
         setImages([])
     }
@@ -36,8 +39,13 @@ useEffect(()=>{
 
 let userPics = images.map(pic => {
     debugger
-    return <Image image={pic} key={pic} />;
+    return <Image image={pic.picture} key={pic.id} />;
   });
+
+  let picTotalVotes = totalVotes.map(vote => {
+      debugger
+  return <p key={vote.id}>Total Votes: {vote.total_votes}</p>
+  })
 
     return (
    
@@ -52,6 +60,7 @@ let userPics = images.map(pic => {
         <div className="userPics">
         User Pics
         {userPics}
+        {picTotalVotes}
         </div>
         </>
     )
