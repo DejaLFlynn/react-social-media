@@ -58,7 +58,6 @@ const LandingPage = ({ onLogin }) => {
         <div className="header">
           <span className="LogoLetter">C</span>lick me til I scream!
           {/* <img className="logo" src={lips} /> */}
-          <p className="bio">If it tickles your fancy, CLICK!</p>
         </div>
 
         <div className="popularImageContainer">
