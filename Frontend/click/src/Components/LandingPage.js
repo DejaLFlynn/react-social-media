@@ -5,8 +5,7 @@ import { useInput } from "../Utilities/CustomHooks";
 import Input from "./Input";
 import Error from "./Error";
 
-
-import "../CSS/LandingPage/StarsBackground.css"
+import "../CSS/LandingPage/StarsBackground.css";
 import "../CSS/LandingPage/LandingPage.css";
 
 const LandingPage = ({ onLogin }) => {
@@ -19,7 +18,8 @@ const LandingPage = ({ onLogin }) => {
     event.preventDefault();
     try {
       let res = await axios.get(
-        `http://localhost:4000/users/${username.value}`);
+        `http://localhost:4000/users/${username.value}`
+      );
 
       if (res) {
         sessionStorage.setItem("username", username.value);
@@ -27,7 +27,7 @@ const LandingPage = ({ onLogin }) => {
         onLogin();
       }
     } catch (err) {
-      console.log(error)
+      console.log(error);
       setError("Please Enter a Valid Username or Sign the F*ck Up");
     }
   };
@@ -36,7 +36,7 @@ const LandingPage = ({ onLogin }) => {
 
     try {
       let res = await axios.get(imageUrl);
-      setImages(res.data.payload[0].picture)
+      setImages(res.data.payload[0].picture);
     } catch (error) {
       setImages("");
     }
@@ -45,73 +45,65 @@ const LandingPage = ({ onLogin }) => {
   useEffect(() => {
     getTopPic();
   }, []);
-  
+
   return (
     <>
-      
       <div className="LandingPage">
         <div id="stars"></div>
-        <div id="stars2"></div> 
+        <div id="stars2"></div>
         <div id="stars3"></div>
-        
-          <div className="header">
-            <span className="LogoLetter">C</span>lick me til I scream!
-            {/* <img className="logo" src={lips} /> */}
-          </div>
 
-          <div className="popularImageContainer">
-            <div className="popularImage">
-              <img src={images} alt={""} className="image" />
-              <p>VOTES: 1,456,504</p>
+        <div className="header">
+          <span className="LogoLetter">C</span>lick me til I scream!
+          {/* <img className="logo" src={lips} /> */}
+          <p className="bio">If it tickles your fancy, CLICK!</p>
+        </div>
+
+        <div className="popularImageContainer">
+          <div className="popularImage">
+            <img src={images} alt={""} className="image" />
+            <p>VOTES: 1,456,504</p>
+          </div>
+        </div>
+
+        <div className="signIn">
+          <div className="signInForm">
+            <form onSubmit={handleSubmit}>
+              <div>
+                <Input
+                  className={"userInputs"}
+                  placeholder={"Enter Username"}
+                  input={username}
+                />
+              </div>
+
+              <div>
+                <Input
+                  className={"userInputs"}
+                  placeholder={"Enter Email"}
+                  input={email}
+                />
+              </div>
+
+              <div>
+                <button className="signInBtn" type="submit">
+                  Sign In
+                </button>
+              </div>
+            </form>
+
+            <div>
+              {error ? <Error className="Error" message={error} /> : null}
+            </div>
+
+            <div className="signUpLink">
+              <Link to={"/SignUp"} className="signUpLink">
+                Sign Up
+              </Link>
             </div>
           </div>
-
-          <div className ="signIn">
-
-          <div className="signInForm">
-
-            <form onSubmit={handleSubmit}>
-              
-              <div>
-              <Input
-                className={"userInputs"}
-                placeholder={"Enter Username"}
-                input={username}
-              />
-              </div>
-
-              <div>
-              <Input
-                className={"userInputs"}
-                placeholder={"Enter Email"}
-                input={email}
-              />
-              </div>
-
-              <div>
-              <button className="signInBtn" type="submit">
-                Sign In
-              </button>
-              </div>
-
-            </form>
-              
-          
-          <div>{error ? <Error className="Error" message={error} /> : null}</div>
-          
-          <div className="signUpLink">
-          <Link to={"/SignUp"} className="signUpLink">
-            Sign Up
-          </Link>
-          </div>
-          </div>
-              
-
-          </div>
-        
         </div>
-        
-
+      </div>
     </>
   );
 };

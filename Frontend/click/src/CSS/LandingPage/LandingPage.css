@@ -114,6 +114,11 @@ fieldset {
     color: #806914;
   }
 }
+.bio {
+  color: hotpink;
+  font-size: 35px;
+  font-family: PWFreshPaintings;
+}
 .popularImageContainer {
   z-index: 1;
   grid-area: popularPic;
