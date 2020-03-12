@@ -16,11 +16,41 @@ fieldset{border-width:0; padding:0; margin:0;
 
 }
 .userProfile{
-    border: 5px outset rgb(94, 250, 21);
+    width: 350px;
+    height: 350px;
+    display: grid;
+    
+    
+    
 }
 .userPics{
-    border: 5px outset rgb(11, 25, 228);
+    width: 350px;
+    height: 350px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-template-areas: ". . . ." ". . . ." ". . . .";
+    
 }
+img{
+    width: 350px;
+    height: 350px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    color: #00ddd6;
+  font-weight: bold;
+  font-size: 18px;
+  border: 10px solid rgba(173, 255, 47, 0);
+  border-radius: 5px;
+  
+
+  
+
+}
+
 /* .picGrid{
 display: grid;
 grid-template-columns: repeat(5, 1fr);

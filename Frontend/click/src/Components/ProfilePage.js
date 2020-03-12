@@ -3,6 +3,7 @@ import axios from "axios"
 import Image from "./Image"
 import '../CSS/LandingPage/profilePage.css'
 
+
 const Profile = () => {
     const [images, setImages]=useState([]);
     const [username, setUsername] =useState("");
@@ -42,16 +43,17 @@ let userPics = images.map(pic => {
    
         <>
         <div className ="Profile">
-            
+        User Pics
         <div className="userProfile">
         <p>Hello {username}!!!</p>
-        User Pics
-        <img src={users} alt={""}  className="topPic"/>
+        <img src={users} alt={""}  className="profilePic"/>
+            
         </div>
         <div className="userPics">
         User Pics
         {userPics}
         </div>
+
         </div>
         </>
     )
