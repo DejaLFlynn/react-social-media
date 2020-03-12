@@ -47,13 +47,11 @@ let userPics = images.map(pic => {
         <div className="userProfile">
         <p>Hello {username}!!!</p>
         <img src={users} alt={""}  className="profilePic"/>
-            
+        </div>
         </div>
         <div className="userPics">
         User Pics
         {userPics}
-        </div>
-
         </div>
         </>
     )
