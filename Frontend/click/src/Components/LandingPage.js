@@ -13,6 +13,7 @@ const LandingPage = ({ onLogin }) => {
   const email = useInput("");
   const [error, setError] = useState("");
   const [images, setImages] = useState("");
+  const [totalVotes, settotalVotes] = useState("");
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -37,6 +38,7 @@ const LandingPage = ({ onLogin }) => {
     try {
       let res = await axios.get(imageUrl);
       setImages(res.data.payload[0].picture);
+      settotalVotes(res.data.payload[0].total_votes);
     } catch (error) {
       setImages("");
     }
@@ -62,7 +64,7 @@ const LandingPage = ({ onLogin }) => {
         <div className="popularImageContainer">
           <div className="popularImage">
             <img src={images} alt={""} className="image" />
-            <p>VOTES: 1,456,504</p>
+            <p>VOTES: {totalVotes} </p>
           </div>
         </div>
 

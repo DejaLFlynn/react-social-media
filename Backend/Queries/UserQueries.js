@@ -49,6 +49,8 @@ const deleteUser = async (req, res) => {
    }
 }
 
+
+
 const createImage = async (req, res) => {
    try {
       let newImage = await db.one("INSERT INTO pictures (picture, user_id) VALUES(${picture}, ${id}) RETURNING id", req.body);
@@ -59,7 +61,7 @@ const createImage = async (req, res) => {
       })
    } catch (err){
      res.status(404).json({
-        status: err,
+         status: err,
          message: "Picture was not created",
          payload: null
       })
