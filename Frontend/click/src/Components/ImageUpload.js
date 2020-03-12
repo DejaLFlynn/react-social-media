@@ -1,28 +1,46 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import Input from './Input'
 
 
 const ImageUpload = () => {
     
     const [image, setImage] = useState(null)
+    const [hashtag, setHashtag] = useState(null)
 
-    const handleUpload = async (event) => {
+    const handleUpload = (event) => {
         setImage(event.target.files[0])
     }
 
-    // const imageUploadHandler = () => {
-    //     const file = new FormData()
-    //     file.append('image', image, image.name)
-    //     let res = await axios.post(' ', file)
-    // }
+    const imageUploadHandler = async () => {
+        const formData = new FormData()
+        formData.append(image, image.name)
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        }
+        try { 
+            let res = await axios.post('/upload', formData, config)
+            debugger
+        } catch (error) {
+            console.log(error)
+        }
+     }
 
     return(
-        <form>
+        <form onSubmit={imageUploadHandler}>
             <div className="">
-                <input type="file" />
+                <Input type="file" name="image"/>
             </div>
             <div className="">
                 <button className="" onClick={handleUpload}>Upload</button>
+            </div>
+            <div>
+                <Input type={"text"} name={'hashtag'} placeholder={'Enter Hashtags Separated by Commas'}/>
+            </div>
+            <div>
+                <button type='submit'></button>
             </div>
         </form>
     )       
