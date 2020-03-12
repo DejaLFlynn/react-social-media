@@ -11,11 +11,11 @@ const path = require("path");
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
-app.use(express.static(path.resolve(__dirname, "./public/Assets/Images")))
+app.use(express.static(path.resolve(__dirname, "../Frontend/click/src/Public")))
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, '../PulicAssets/Images')
+        cb(null, './Frontend/click/src/Public/Images')
     },
     filename: function(req, file, cb) {
         cb(null, `${Date.now()} - ${file.originalname}`)
@@ -36,6 +36,23 @@ const upload = multer({
     },
     //fileFilter: fileFilter
 })
+
+app.post('/upload', upload.single("image"), (req,res,next) => {
+    try {
+        let url = "http://localhost:4000/" + req.file.path.replace('public/', '')
+        res.json({
+            imageUrl: url,
+            message: "File Uploaded"
+     })
+     
+    } catch (error) {
+        res.send(400).json({
+            status: error,
+            message: "Upload Failed"
+        })
+    }
+ })
+
 
 const usersRouter = require("./Routes/Users/Users")
 const imagesRouter = require("./Routes/Images/Images")
