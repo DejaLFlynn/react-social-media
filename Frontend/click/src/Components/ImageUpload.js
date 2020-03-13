@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import { useInput } from '../Utilities/CustomHooks'
 import axios from 'axios'
 import Input from './Input'
 const ImageUpload = () => {
     
     const [image, setImage] = useState(null)
-    const [hashtag, setHashtag] = useState(null)
+    const hashtag = useInput("")
 
     const handleUpload = (event) => {
         setImage(event.target.files[0])
@@ -14,31 +15,27 @@ const ImageUpload = () => {
         event.preventDefault()
         const formData = new FormData()
         formData.append("image", image)
-        console.log(image)
         const config = {
             headers: {
                 'content-type': 'multipart/form-data'
             }
         }
         event.target.image.value = null
-        event.target.hashtag = null //Better Way of Coding?
+        event.target.hashtag.value = null //Better Way of Coding?
         try { 
             let res = await axios.post('http://localhost:4000/upload', formData, config)
             let imageUrl = res.data.imageUrl
-            debugger
             let resImage = await axios.post(`http://localhost:4000/users/${sessionStorage.id}/images`, {
                 image: imageUrl
             })
-            let imageId = res.resImage.id
-            let resHashtag = await axios.post('`http://localhost:4000/images/hashtags', {
-                picture: imageId,
-                body: hashtag
+            let imageId = resImage.data.payload.id
+            debugger
+            let resHashtag = await axios.post('http://localhost:4000/images/hashtags', {
+                picture_id: imageId,
+                body: hashtag.value
             })
         } catch (error) {
             //errorAlert = "Image Failed to Upload
-        }
-        try {
-            let res = await.post()
         }
      }
 
@@ -48,7 +45,7 @@ const ImageUpload = () => {
                 <input type={"file"} name={"image"} onChange={(event) => handleUpload(event)}/>
             </div>
             <div>
-                <Input type={"text"} name={'hashtag'} placeholder={'Enter Hashtags Separated by Commas'}/>
+                <Input type={"text"} name={'hashtag'} placeholder={'Enter Hashtags Separated by Commas'} input={hashtag}/>
             </div>
             <div>
                 <button type='submit'></button>
