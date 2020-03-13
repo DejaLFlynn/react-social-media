@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Input from './Input'
-
-
 const ImageUpload = () => {
     
     const [image, setImage] = useState(null)
