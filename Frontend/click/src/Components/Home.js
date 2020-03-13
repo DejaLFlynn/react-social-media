@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 import React, {useState, useEffect } from 'react';
 import ImageUpload from './ImageUpload';
 // import { useInput } from "../Utilities/CustomHooks";
 import Image from './Image'
 import axios from 'axios';
-=======
-import React from "react";
-import ImageUpload from "./ImageUpload";
-import Image from "./Image";
-import "../CSS/HomePage.css";
->>>>>>> 1238dffd85401a4f2edb6b030331065539f140dc
 
 const Home = () => {
   const [randPics, setRandPics]= useState([]);
@@ -55,12 +48,9 @@ let displayRandPics = randPics.map(pic =>{
   return (
     <div className="Home">
       <ImageUpload />
-<<<<<<< HEAD
     <ul className="randomPics">
       {displayRandPics}
     </ul>
-=======
->>>>>>> 1238dffd85401a4f2edb6b030331065539f140dc
     </div>
   );
 };
