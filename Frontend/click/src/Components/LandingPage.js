@@ -63,7 +63,7 @@ const LandingPage = ({ onLogin }) => {
         <div className="popularImageContainer">
           <div className="popularImage">
             <img src={images} alt={""} className="image" />
-            <p>VOTES: {totalVotes} </p>
+            <p>CLICKS: {totalVotes} </p>
           </div>
         </div>
 
