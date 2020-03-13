@@ -27,7 +27,7 @@ const ImageUpload = () => {
         try { 
             let res = await axios.post('http://localhost:4000/upload', formData, config)
             let imageUrl = res.data.imageUrl
-            let res = await axios.post(`http://localhost:4000/${sessionStorage.id}/images`, {
+            let resImage = await axios.post(`http://localhost:4000/${sessionStorage.id}/images`, {
                 image: imageUrl
             })
             debugger
