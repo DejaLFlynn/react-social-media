@@ -31,7 +31,6 @@ const ImageUpload = () => {
                 image: imageUrl
             })
             let imageId = resImage.data.payload.id
-            debugger
             let resHashtag = await axios.post('http://localhost:4000/images/hashtags', {
                 picture_id: imageId,
                 body: hashtag.value
