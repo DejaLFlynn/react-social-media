@@ -31,9 +31,16 @@ const ImageUpload = () => {
             let resImage = await axios.post(`http://localhost:4000/users/${sessionStorage.id}/images`, {
                 image: imageUrl
             })
-            debugger
+            let imageId = res.resImage.id
+            let resHashtag = await axios.post('`http://localhost:4000/images/hashtags', {
+                picture: imageId,
+                body: hashtag
+            })
         } catch (error) {
-            console.log(error)
+            //errorAlert = "Image Failed to Upload
+        }
+        try {
+            let res = await.post()
         }
      }
 
