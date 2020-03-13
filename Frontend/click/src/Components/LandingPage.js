@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useInput } from "../Utilities/CustomHooks";
+import Image from "./Image"
 import Input from "./Input";
 import Error from "./Error";
 
@@ -12,7 +13,7 @@ const LandingPage = ({ onLogin }) => {
   const username = useInput("");
   const email = useInput("");
   const [error, setError] = useState("");
-  const [images, setImages] = useState("");
+  const [image, setImage] = useState("");
   const [totalVotes, settotalVotes] = useState("");
 
   const handleSubmit = async (event) => {
@@ -37,10 +38,10 @@ const LandingPage = ({ onLogin }) => {
 
     try {
       let res = await axios.get(imageUrl);
-      setImages(res.data.payload[0].picture);
+      setImage(res.data.payload[0].picture);
       settotalVotes(res.data.payload[0].total_votes);
     } catch (error) {
-      setImages("");
+      setImage("");
     }
   };
 
@@ -62,7 +63,7 @@ const LandingPage = ({ onLogin }) => {
 
         <div className="popularImageContainer">
           <div className="popularImage">
-            <img src={images} alt={""} className="image" />
+            <Image image={image} alt={""} className="image" />
             <p>CLICKS: {totalVotes} </p>
           </div>
         </div>
