@@ -10,7 +10,7 @@ import SignUp from './SignUpPage'
 
 const Authorization = () => {
     
-    const [authorization, setAuthorization]  = useState(false) 
+    const [authorization, setAuthorization]  = useState(true) 
 
     const handleAuthorization = () => {
         setAuthorization(true)

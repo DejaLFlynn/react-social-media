@@ -15,7 +15,7 @@ const LandingPage = ({ onLogin }) => {
   const [images, setImages] = useState("");
   const [totalVotes, settotalVotes] = useState("");
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       let res = await axios.get(

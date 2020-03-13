@@ -47,7 +47,7 @@ app.post('/upload', upload.single("image"), (req,res,next) => {
      })
 
     } catch (error) {
-        res.send(400).json({
+        res.status(400).json({
             status: error,
             message: "Upload Failed"
         })
