@@ -53,7 +53,7 @@ const deleteUser = async (req, res) => {
 
 const createImage = async (req, res) => {
    try {
-      let newImage = await db.one("INSERT INTO pictures (picture, user_id) VALUES($1, $2) RETURNING id", [req.body, req.params.id]);
+      let newImage = await db.one("INSERT INTO pictures (picture, user_id) VALUES($1, $2) RETURNING id", [req.body.image, req.params.id]);
       res.status(200).json({
          status: "success",
          message: "A new picture is created",
