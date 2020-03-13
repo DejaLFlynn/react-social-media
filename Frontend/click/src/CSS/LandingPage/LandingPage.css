@@ -114,11 +114,7 @@ fieldset {
     color: #806914;
   }
 }
-.bio {
-  color: hotpink;
-  font-size: 35px;
-  font-family: PWFreshPaintings;
-}
+
 .popularImageContainer {
   z-index: 1;
   grid-area: popularPic;
@@ -147,17 +143,17 @@ fieldset {
   width: 250px;
   height: 250px;
   border-radius: 5px;
+  border: none
 }
 
 .signIn {
   z-index: 1;
   grid-area: signIn;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   margin-left: 10%;
-  padding-top: 15px;
 }
 
 .signInForm {
