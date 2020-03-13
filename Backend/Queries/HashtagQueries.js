@@ -19,7 +19,7 @@ const createHashtag = async (req, res) => {
 
 const getTwoRandPics = async (req, res) => {
     try {
-        let hashtags = await db.any("SELECT p.picture, ARRAY_AGG (h.body) user_hashtags FROM pictures p JOIN hashtags h ON h.picture_id = p.id GROUP BY p.picture, p.id ORDER BY random() LIMIT 2");
+        let hashtags = await db.any("SELECT p.id, p.picture, ARRAY_AGG (h.body) user_hashtags FROM pictures p JOIN hashtags h ON h.picture_id = p.id GROUP BY p.picture, p.id ORDER BY random() LIMIT 2");
         res.status(200).json({
             status: "Success",
             message: "Found random hashtags",

@@ -38,12 +38,10 @@ useEffect(()=>{
 }, [])
 
 let userPics = images.map(pic => {
-    debugger
     return <Image image={pic.picture} key={pic.id} />;
   });
 
   let picTotalVotes = totalVotes.map(vote => {
-      debugger
   return <p key={vote.id}>Total Votes: {vote.total_votes}</p>
   })
 
