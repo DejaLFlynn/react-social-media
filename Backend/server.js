@@ -39,12 +39,13 @@ const upload = multer({
 
 app.post('/upload', upload.single("image"), (req,res,next) => {
     try {
-        let url = "http://localhost:4000/" + req.file.path.replace('public/', '')
+        let url = "http://localhost:4000/" + req.file.path
+        //console.log(req.file)
         res.json({
             imageUrl: url,
             message: "File Uploaded"
      })
-     
+
     } catch (error) {
         res.send(400).json({
             status: error,
@@ -66,3 +67,18 @@ app.use("/votes", votesRouter)
 app.use("/hashtags", hashtagsRouter)
 
 app.listen(port, () => console.log(`Server running on Port: ${port}`))
+
+
+
+
+
+// {
+//     fieldname: 'image',
+//     originalname: 'NilberRemon.jpg',
+//     encoding: '7bit',
+//     mimetype: 'image/jpeg',
+//     destination: './Frontend/click/src/Public/Images',
+//     filename: '1584065473817 - NilberRemon.jpg',
+//     path: 'Frontend/click/src/Public/Images/1584065473817 - NilberRemon.jpg',
+//     size: 151796
+//   }

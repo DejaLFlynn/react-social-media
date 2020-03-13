@@ -48,7 +48,8 @@ let userPics = images.map(pic => {
     return (
    
         <>
-        <div className ="Profile">
+        <div className="Profile">
+        <div className ="ProfileHeader">
         User Pics
         <div className="userProfile">
         <img src={users} alt={""}  className="profilePic"/>
@@ -59,6 +60,7 @@ let userPics = images.map(pic => {
         User Pics
         {userPics}
         {picTotalVotes}
+        </div>
         </div>
         </>
     )
