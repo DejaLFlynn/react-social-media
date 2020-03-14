@@ -59,7 +59,7 @@ let userPics = images.map(pic => {
         </div>
         
         <div className="userPics">
-        User Pics
+        Previous Voted pictures
         {userPics}
         {picTotalVotes}
         </div>
