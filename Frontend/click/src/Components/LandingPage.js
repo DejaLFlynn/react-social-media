@@ -87,7 +87,7 @@ const LandingPage = ({ onLogin }) => {
               <div>
                 <Input
                   className={"userInputs"}
-                  placeholder={"Enter Email"}
+                  placeholder={"Enter Password"}
                   input={email}
                 />
               </div>
