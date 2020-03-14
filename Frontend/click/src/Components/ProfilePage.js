@@ -54,10 +54,9 @@ let userPics = images.map(pic => {
             <p>Hello {username}!!!</p>
         </div>
        
-       
-        
-        <div className="userPics">
+        <div className="userPics" >
         Previous Voted pictures
+        
         {userPics}
         {picTotalVotes}
         </div> 

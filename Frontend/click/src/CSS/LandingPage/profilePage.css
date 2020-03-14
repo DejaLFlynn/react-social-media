@@ -27,8 +27,8 @@ fieldset{border-width:0; padding:0; margin:0;
 
 }
 .userProfile{
-    width: 250px;
-    height: 250px;
+    width: 500px;
+    height: 500px;
     color: hotpink;
     /* display: flex;
     align-items: center;
@@ -57,14 +57,16 @@ fieldset{border-width:0; padding:0; margin:0;
 .userPics{
     width: 150px;
     height: 150px;
-    display: grid;
-    color: hotpink;
+    text-align: center;
+    /* display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px; */
     font-weight: bold;
-    font-size: 18px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-column-gap: 10px;
-    grid-template-areas: ". . . ." ". . . ." ". . . .";
+  font-size: 18px;
+  color: hotpink;
+  font-weight: bold;
+  font-size: 18px;
+  
     
 }
 
