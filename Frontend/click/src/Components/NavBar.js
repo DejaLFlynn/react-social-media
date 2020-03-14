@@ -1,13 +1,17 @@
 import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
+import Modal from 'react-modal';
 import axios from 'axios'
 import Input from './Input'
+import ClickModal from './Modal'
+import ImageUpload from './ImageUpload'
 import {useInput} from '../Utilities/CustomHooks'
 
 
 const NavBar = () => {
     
     const [NavButton, setNavButton] = useState(false)
+    const [modalIsOpen,setIsOpen] = useState(false)
     
     const handleNavButton = () => {
         setNavButton(!NavButton)
@@ -30,6 +34,15 @@ const NavBar = () => {
         fetchHashtags(`http://localhost:4000/hashtags/${input.value}`) //Fix Connection
         
     }
+
+    const openModal = () =>  {
+        setIsOpen(true);
+      }
+
+    const closeModal = () => {
+        setIsOpen(false);
+      }
+
     
     return (
         <nav>
@@ -37,7 +50,13 @@ const NavBar = () => {
             <form onSubmit={handleOnSubmit}>
                 <Input placeholder={"Search Hashtags"} input={input}/>
             </form>
-            <button>Add Image</button>
+            
+            <button onClick={openModal}>Click</button>
+            <ClickModal modalIsOpen={modalIsOpen} modalClose={closeModal}>
+                
+                "UPLOAD"
+            </ClickModal>
+
         </nav>
     )
 }

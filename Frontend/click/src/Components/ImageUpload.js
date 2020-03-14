@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useInput } from '../Utilities/CustomHooks'
 import axios from 'axios'
 import Input from './Input'
+
+
 const ImageUpload = () => {
     
     const [image, setImage] = useState(null)
@@ -29,7 +31,6 @@ const ImageUpload = () => {
                 image: imageUrl
             })
             let imageId = resImage.data.payload.id
-            debugger
             let resHashtag = await axios.post('http://localhost:4000/images/hashtags', {
                 picture_id: imageId,
                 body: hashtag.value
@@ -55,3 +56,4 @@ const ImageUpload = () => {
 }
 
 export default ImageUpload
+
