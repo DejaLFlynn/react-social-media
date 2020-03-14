@@ -49,24 +49,24 @@ let userPics = images.map(pic => {
    
         <>
         <div className="Profile">
-        <div className ="ProfileHeader">
-        User Pics
-        </div>
-
         <div className="userProfile">
-        <img src={users} alt={""}  className="profilePic"/>
-        <p>Hello {username}!!!</p>
+            <img src={users} alt={""}  className="profilePic"/>
+            <p>Hello {username}!!!</p>
         </div>
+       
+       
         
         <div className="userPics">
         Previous Voted pictures
         {userPics}
         {picTotalVotes}
-        </div>
-        
+        </div> 
         </div>
         </>
     )
 }
 
 export default Profile
+
+
+// dejaflynn@pursuit.org
