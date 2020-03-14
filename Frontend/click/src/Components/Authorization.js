@@ -24,7 +24,7 @@ const Authorization = () => {
                 <Route exact path={"/"}>
                     <LandingPage onLogin={handleAuthorization}/>
                 </Route>
-                <Route path={"/SignUp"}>
+                <Route exact path={"/SignUp"}>
                     <SignUp onLogin={handleAuthorization}/>
                 </Route>
                 </Switch>
@@ -34,12 +34,13 @@ const Authorization = () => {
                 <>
                 <NavBar />
                 <Switch>
-                <Route path={"/Home"} >
+                <Route exact path={"/Home"} >
                     <Home/>
                 </Route>
-                <Route path={"/Profile"}>
+                <Route exact path={"/Profile"}>
                     <Profile />
                 </Route>
+
                 </Switch>
                 </>
             : <Redirect to={"/"}/>  }

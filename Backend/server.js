@@ -9,21 +9,25 @@ const multer = require('multer');
 const path = require("path");
 
 app.use(cors());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json())
-app.use(express.static(path.resolve(__dirname, "../Frontend/click/src/Public")))
+app.use(bodyParser.urlencoded({
+    extended: true,
+    limit: '50mb',
+    parameterLimit: 50000
+}));
+app.use(bodyParser.json({limit: '50mb'}))
+app.use(express.static(path.join(__dirname, 'Public')))
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, './Frontend/click/src/Public/Images')
+        cb(null, './Backend/Public/Uploads')
     },
-    filename: function(req, file, cb) {
-        cb(null, `${Date.now()} - ${file.originalname}`)
+    filename: function (req, file, cb) {
+        cb(null, `${Date.now()}-${file.originalname}`)
     }
 })
 
 const fileFilter = (req, file, cb) => {
-    if(file.mimetype === 'image/jpeg' || filetype.mimetype === 'image/png'){
+    if (file.mimetype === 'image/jpeg' || filetype.mimetype === 'image/png' || filetype.mimetype === 'image/gif') {
         cb(null, true)
     } else {
         cb(null, false)
@@ -32,19 +36,21 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({
     storage: storage,
-    limits: {fileSize: 1024 * 1024 * 5 //bytes 1mb = 1024 bytes
+    limits: {
+        fileSize: 1024 * 1024 * 5 //bytes 1mb = 1024 bytes
     },
     //fileFilter: fileFilter
 })
 
-app.post('/upload', upload.single("image"), (req,res,next) => {
+
+app.post('/upload', upload.single("image"), (req, res, next) => {
     try {
-        let url = "http://localhost:4000/" + req.file.path
-        //console.log(req.file)
+        debugger
+        let url = "http://localhost:4000/Uploads/" + req.file.filename
         res.json({
             imageUrl: url,
             message: "File Uploaded"
-     })
+        })
 
     } catch (error) {
         res.status(400).json({
@@ -52,7 +58,7 @@ app.post('/upload', upload.single("image"), (req,res,next) => {
             message: "Upload Failed"
         })
     }
- })
+})
 
 
 const usersRouter = require("./Routes/Users/Users")

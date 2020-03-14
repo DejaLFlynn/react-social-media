@@ -15,6 +15,8 @@ const ImageUpload = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+        event.target.hashtag.value = null //Better Way of Coding?
+        event.target.image.value = null
         const formData = new FormData()
         formData.append("image", image)
         const config = {
@@ -22,8 +24,6 @@ const ImageUpload = () => {
                 'content-type': 'multipart/form-data'
             }
         }
-        event.target.image.value = null
-        event.target.hashtag.value = null //Better Way of Coding?
         try { 
             let res = await axios.post('http://localhost:4000/upload', formData, config)
             let imageUrl = res.data.imageUrl
@@ -49,7 +49,7 @@ const ImageUpload = () => {
                 <Input type={"text"} name={'hashtag'} placeholder={'Enter Hashtags Separated by Commas'} input={hashtag}/>
             </div>
             <div>
-                <button type='submit'></button>
+                <button type='submit'>Upload</button>
             </div>
         </form>
     )       
