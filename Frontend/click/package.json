@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "@yaireo/tagify": "^3.6.2",
     "axios": "^0.19.2",
+    "minimist": "^1.2.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-modal": "^3.11.2",
