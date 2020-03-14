@@ -37,10 +37,13 @@ useEffect(()=>{
     getUserProfile()
 }, [])
 
-let userPics = images.map(pic => {
-    return <Image image={pic.picture} key={pic.id} />;
-  });
-
+// let userPics = images.map(pic => {
+//     return <Image image={pic.picture} key={pic.id} />;
+//   });
+  let userPics = images.map(pic =>{
+    return <li className="listOfPics" key={pic.id}><Image image={pic.picture}/> 
+    </li>
+})
   let picTotalVotes = totalVotes.map(vote => {
   return <p key={vote.id}>Total Votes: {vote.total_votes}</p>
   })
@@ -55,10 +58,11 @@ let userPics = images.map(pic => {
         </div>
        
         <div className="userPics" >
-        Previous Voted pictures
-        
-        {userPics}
         {picTotalVotes}
+       <ul className="list">
+        Previous Voted pictures
+        {userPics}
+           </ul> 
         </div> 
         </div>
         </>
