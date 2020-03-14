@@ -18,7 +18,7 @@ const customStyles = {
 
     function afterOpenModal() {
       // references are now sync'd and can be accessed.
-      subtitle.style.color = 'hotpink';
+      console.log(children)
     }
    
    
@@ -33,7 +33,7 @@ const customStyles = {
             contentLabel="Example Modal"
           >
    
-            <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
+            {children}
             <button onClick={modalClose}>close</button>
             
           </Modal>
