@@ -56,7 +56,7 @@ fieldset{border-width:0; padding:0; margin:0;
     grid-template-areas: ". . . ." ". . . ." ". . . .";
     
 }
-/* .img{
+.img{
     width: 350px;
     height: 350px;
     text-align: center;
@@ -74,5 +74,5 @@ fieldset{border-width:0; padding:0; margin:0;
 
   
 
-} */
+}
 
