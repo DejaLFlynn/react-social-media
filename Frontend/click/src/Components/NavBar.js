@@ -53,8 +53,8 @@ const NavBar = () => {
             
             <button onClick={openModal}>Click</button>
             <ClickModal modalIsOpen={modalIsOpen} modalClose={closeModal}>
+                <ImageUpload />
                 
-                "UPLOAD"
             </ClickModal>
 
         </nav>
