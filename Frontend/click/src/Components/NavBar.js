@@ -6,6 +6,7 @@ import Input from './Input'
 import ClickModal from './Modal'
 import ImageUpload from './ImageUpload'
 import {useInput} from '../Utilities/CustomHooks'
+import "../CSS/NavBar.css"
 
 
 const NavBar = () => {
@@ -41,22 +42,25 @@ const NavBar = () => {
 
     const closeModal = () => {
         setIsOpen(false);
+        console.log(modalIsOpen)
       }
 
     
     return (
-        <nav>
+        <nav className="navBarContainer">
+        <nav className="nav">
             { NavButton ? <NavLink to={"/Home"}><button onClick={handleNavButton}>HOME</button></NavLink> : <NavLink to={"/Profile"}><button onClick={handleNavButton}>Profile</button></NavLink> }
             <form onSubmit={handleOnSubmit}>
                 <Input placeholder={"Search Hashtags"} input={input}/>
             </form>
             
             <button onClick={openModal}>Click</button>
-            <ClickModal modalIsOpen={modalIsOpen} modalClose={closeModal}>
-                <ImageUpload />
-                
+            
+            <ClickModal modalIsOpen={modalIsOpen}>
+                <ImageUpload modalClose={closeModal}/>
             </ClickModal>
 
+        </nav>
         </nav>
     )
 }

@@ -4,7 +4,7 @@ import axios from 'axios'
 import Input from './Input'
 
 
-const ImageUpload = () => {
+const ImageUpload = ({modalClose}) => {
     
     const [image, setImage] = useState(null)
     const hashtag = useInput("")
@@ -35,8 +35,9 @@ const ImageUpload = () => {
                 picture_id: imageId,
                 body: hashtag.value
             })
+            modalClose()
         } catch (error) {
-            //errorAlert = "Image Failed to Upload
+            //errorAlert = "Image Failed to Upload"
         }
      }
 
@@ -49,7 +50,7 @@ const ImageUpload = () => {
                 <Input type={"text"} name={'hashtag'} placeholder={'Enter Hashtags Separated by Commas'} input={hashtag}/>
             </div>
             <div>
-                <button type='submit'>Upload</button>
+                <button type='submit'>MAKE US CRY LAUGHING</button>
             </div>
         </form>
     )       

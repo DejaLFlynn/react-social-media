@@ -13,10 +13,9 @@ const customStyles = {
   };
  
   function ClickModal ({children, modalIsOpen, modalClose}){
-    var subtitle;
 
 
-    function afterOpenModal() {
+    const afterOpenModal = () => {
       // references are now sync'd and can be accessed.
       console.log(children)
     }
@@ -34,7 +33,7 @@ const customStyles = {
           >
    
             {children}
-            <button onClick={modalClose}>close</button>
+            {/* <button onClick={modalClose}>close</button> */}
             
           </Modal>
         </div>

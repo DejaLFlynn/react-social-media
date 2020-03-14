@@ -1,0 +1,32 @@
+.navBarContainer {
+    background: linear-gradient(317deg, #ffe739, #e41b80, #36e8df);
+    background-size: 600% 600%;
+    height: 150px;
+    animation-name: navBarGradient;
+    overflow: hidden;
+    -webkit-animation: navBarGradient 12s ease infinite;
+    -moz-animation: navBarGradient 12s ease infinite;
+    animation: navBarGradient 12s ease infinite;
+}
+@-webkit-keyframes navBarGradient {
+    0%{background-position:0% 10%}
+    50%{background-position:100% 91%}
+    100%{background-position:0% 10%}
+}
+@-moz-keyframes navBarGradient {
+    0%{background-position:0% 10%}
+    50%{background-position:100% 91%}
+    100%{background-position:0% 10%}
+}
+@keyframes navBarGradient {
+    0%{background-position:0% 10%}
+    50%{background-position:100% 91%}
+    100%{background-position:0% 10%}
+}
+
+nav{
+    background-image: url("./Images/BlackAlternatingTile.png");
+    background-repeat: repeat;
+    background-size: 10%;
+    height: 150px;
+}
