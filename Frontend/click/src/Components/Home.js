@@ -33,7 +33,7 @@ let displayRandPics = randPics.map(pic =>{
 
   return (
     <div className="Home">
-      <ImageUpload />
+      
     <ul className="randomPics">
       {displayRandPics}
     </ul>
