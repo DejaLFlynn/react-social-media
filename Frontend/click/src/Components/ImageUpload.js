@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useInput } from '../Utilities/CustomHooks'
 import axios from 'axios'
 import Input from './Input'
+
+
 const ImageUpload = () => {
     
     const [image, setImage] = useState(null)
@@ -54,3 +56,4 @@ const ImageUpload = () => {
 }
 
 export default ImageUpload
+

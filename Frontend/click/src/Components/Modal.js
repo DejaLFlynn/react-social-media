@@ -12,16 +12,14 @@ const customStyles = {
     }
   };
  
-  function ClickModal (){
+  function ClickModal ({modalIsOpen}){
     var subtitle;
-    const [modalIsOpen,setIsOpen] = useState(false);
-    function openModal() {
-      setIsOpen(true);
-    }
    
+    const [modalOpen,setIsOpen] = useState({modalIsOpen})
+
     function afterOpenModal() {
       // references are now sync'd and can be accessed.
-      subtitle.style.color = '#f00';
+      subtitle.style.color = 'hotpink';
     }
    
     function closeModal(){
@@ -30,7 +28,7 @@ const customStyles = {
    
       return (
         <div>
-          <button onClick={openModal}>Open Modal</button>
+          
           <Modal
             isOpen={modalIsOpen}
             onAfterOpen={afterOpenModal}
@@ -54,4 +52,4 @@ const customStyles = {
       );
   }
 
-export default Modal
+export default ClickModal

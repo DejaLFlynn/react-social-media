@@ -26,6 +26,7 @@ const LandingPage = ({ onLogin }) => {
       if (res) {
         sessionStorage.setItem("username", username.value);
         sessionStorage.setItem("id", res.data.payload.id);
+        console.log(onLogin)
         onLogin();
       }
     } catch (err) {
@@ -57,7 +58,6 @@ const LandingPage = ({ onLogin }) => {
         <div id="stars3"></div>
 
         <div className="header">
-        <div className="header">
         <div className="LogoLetter">
           C
         </div>
@@ -65,7 +65,6 @@ const LandingPage = ({ onLogin }) => {
           lick me til I scream!
           </div>
           {/* <img className="logo" src={lips} /> */}
-        </div>
         </div>
 
         <div className="popularImageContainer">

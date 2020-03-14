@@ -71,8 +71,9 @@ fieldset {
 }
 
 .headerSlogan {
-  display: flex;
-  position: relative;
+  position: absolute;
+  left: 5%;
+  right: 4%;
   height: 100%;
   padding-top: 50px;
   text-shadow: 0 0 3vw #EB1456;
@@ -84,13 +85,15 @@ fieldset {
 
 .LogoLetter {
   font-family: 'LeviBrush';
-  position: relative;
+  position: absolute;
+  left: 1%;
   z-index: 2;
   background: linear-gradient(270deg, rgba(255,231,57,1) 1%, rgba(228,27,128,1) 70%, rgba(67,101,162,1) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 250px;
+  opacity: 75%
 }
 
 .logo {
