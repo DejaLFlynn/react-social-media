@@ -37,11 +37,26 @@ fieldset{border-width:0; padding:0; margin:0;
     margin-top: 20%;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 20px; 
     
-    
-    
-    
+}
+.profilePics{
+    width: 350px;
+    height: 350px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    font-weight: bold;
+  font-size: 18px;
+  color: hotpink;
+  font-weight: bold;
+  font-size: 18px;
+  border: 10px solid rgba(173, 255, 47, 0);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 10px #00ddd6, 0px 0px 30px 20px hotpink, inset 0px 0px 10px 10px #00ddd6, inset 0px 0px 30px 20px hotpink;
+
+
 }
 .userPics{
     width: 350px;
@@ -56,7 +71,7 @@ fieldset{border-width:0; padding:0; margin:0;
     grid-template-areas: ". . . ." ". . . ." ". . . .";
     
 }
-.img{
+/* .img{
     width: 350px;
     height: 350px;
     text-align: center;
@@ -74,5 +89,5 @@ fieldset{border-width:0; padding:0; margin:0;
 
   
 
-}
+} */
 

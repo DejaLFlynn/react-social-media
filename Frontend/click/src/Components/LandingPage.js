@@ -56,10 +56,16 @@ const LandingPage = ({ onLogin }) => {
         <div id="stars2"></div>
         <div id="stars3"></div>
 
-        <span className="LogoLetter">C</span>
         <div className="header">
+        <div className="header">
+        <div className="LogoLetter">
+          C
+        </div>
+          <div className="headerSlogan">
           lick me til I scream!
+          </div>
           {/* <img className="logo" src={lips} /> */}
+        </div>
         </div>
 
         <div className="popularImageContainer">
@@ -71,7 +77,7 @@ const LandingPage = ({ onLogin }) => {
 
         <div className="signIn">
           <div className="signInForm">
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
               <div>
                 <Input
                   className={"userInputs"}
@@ -79,7 +85,6 @@ const LandingPage = ({ onLogin }) => {
                   input={username}
                 />
               </div>
-
               <div>
                 <Input
                   className={"userInputs"}
@@ -94,7 +99,7 @@ const LandingPage = ({ onLogin }) => {
                 </button>
               </div>
             </form>
-
+            
             <div>
               {error ? <Error className="Error" message={error} /> : null}
             </div>
@@ -106,9 +111,9 @@ const LandingPage = ({ onLogin }) => {
             </div>
           </div>
         </div>
-      </div>
-    </>
+    </div>
+  </>
   );
 };
 
-export default LandingPage;
+export default LandingPage
