@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useInput } from "../Utilities/CustomHooks";
-import Image from "./Image"
+import Image from "./Image";
 import Input from "./Input";
 import Error from "./Error";
 
@@ -16,7 +16,7 @@ const LandingPage = ({ onLogin }) => {
   const [image, setImage] = useState("");
   const [totalVotes, settotalVotes] = useState("");
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async event => {
     event.preventDefault();
     try {
       let res = await axios.get(
@@ -26,7 +26,7 @@ const LandingPage = ({ onLogin }) => {
       if (res) {
         sessionStorage.setItem("username", username.value);
         sessionStorage.setItem("id", res.data.payload.id);
-        console.log(onLogin)
+        console.log(onLogin);
         onLogin();
       }
     } catch (err) {
@@ -58,12 +58,8 @@ const LandingPage = ({ onLogin }) => {
         <div id="stars3"></div>
 
         <div className="header">
-        <div className="LogoLetter">
-          C
-        </div>
-          <div className="headerSlogan">
-          lick me til I scream!
-          </div>
+          <div className="LogoLetter">C</div>
+          <div className="headerSlogan">lick me til I scream!</div>
           {/* <img className="logo" src={lips} /> */}
         </div>
 
@@ -98,7 +94,7 @@ const LandingPage = ({ onLogin }) => {
                 </button>
               </div>
             </form>
-            
+
             <div>
               {error ? <Error className="Error" message={error} /> : null}
             </div>
@@ -110,9 +106,9 @@ const LandingPage = ({ onLogin }) => {
             </div>
           </div>
         </div>
-    </div>
-  </>
+      </div>
+    </>
   );
 };
 
-export default LandingPage
+export default LandingPage;
