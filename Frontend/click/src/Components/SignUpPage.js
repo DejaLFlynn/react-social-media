@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Error from './Error'
 import { useInput } from '../Utilities/CustomHooks';
 import axios from 'axios'
+import Modal from './Modal'
 
 const SignUpPage =({onLogin})=>{
     const username = useInput("")
@@ -40,6 +41,8 @@ const SignUpPage =({onLogin})=>{
     return (
       <>
         
+        <Modal />
+
         <form onSubmit={handleSubmit}>
           
           <label> User Name:

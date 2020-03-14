@@ -56,9 +56,14 @@ const LandingPage = ({ onLogin }) => {
         <div id="stars2"></div>
         <div id="stars3"></div>
 
-        <span className="LogoLetter">C</span>
         <div className="header">
+        <div className="header">
+        <div className="LogoLetter">
+          C
+        </div>
+          <div className="headerSlogan">
           lick me til I scream!
+          </div>
           {/* <img className="logo" src={lips} /> */}
         </div>
         </div>
