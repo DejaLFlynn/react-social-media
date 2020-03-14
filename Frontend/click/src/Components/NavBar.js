@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
+import Modal from 'react-modal';
 import axios from 'axios'
 import Input from './Input'
-import Modal from './Modal'
+import ClickModal from './Modal'
 import ImageUpload from './ImageUpload'
 import {useInput} from '../Utilities/CustomHooks'
 
@@ -38,6 +39,10 @@ const NavBar = () => {
         setIsOpen(true);
       }
 
+    const closeModal = () => {
+        setIsOpen(false);
+      }
+
     
     return (
         <nav>
@@ -47,9 +52,10 @@ const NavBar = () => {
             </form>
             
             <button onClick={openModal}>Click</button>
-            <Modal modalIsOpen={modalIsOpen}>
+            <ClickModal modalIsOpen={modalIsOpen} modalClose={closeModal}>
                 
-            </Modal>
+                "UPLOAD"
+            </ClickModal>
 
         </nav>
     )
