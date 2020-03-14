@@ -19,8 +19,8 @@ fieldset{border-width:0; padding:0; margin:0;
     background-repeat: repeat;
     background-size: 10%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* grid-template-rows: repeat(2, 2fr); */
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(2, 2fr);
     grid-column-gap: 0px;
     grid-row-gap: 40px;
     grid-template-areas:
@@ -29,9 +29,16 @@ fieldset{border-width:0; padding:0; margin:0;
 
 }
 .userProfile{
-    width: 350px;
-    height: 350px;
-    display: grid;
+   
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 150%;
+    margin-top: 20%;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    
     
     
     
@@ -49,7 +56,7 @@ fieldset{border-width:0; padding:0; margin:0;
     grid-template-areas: ". . . ." ". . . ." ". . . .";
     
 }
-.img{
+/* .img{
     width: 350px;
     height: 350px;
     text-align: center;
@@ -67,13 +74,5 @@ fieldset{border-width:0; padding:0; margin:0;
 
   
 
-}
+} */
 
-.profilePic{
-    width: 350px;
-    height: 350px;
-    text-align: center;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-
-}

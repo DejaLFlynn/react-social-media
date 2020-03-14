@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Image = ({image}) => {
+const Image = ({image, className}) => {
     
     return(
-        <img src={image} alt=""/>
+        <img src={image} className={className} alt=""/>
     )       
 }
 
