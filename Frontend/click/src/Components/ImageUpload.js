@@ -42,7 +42,7 @@ const ImageUpload = ({modalClose}) => {
      }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form className="" onSubmit={handleSubmit}>
             <div className="">
                 <input type={"file"} name={"image"} onChange={(event) => handleUpload(event)}/>
             </div>

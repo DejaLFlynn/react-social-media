@@ -6,8 +6,8 @@ import Image from "./Image";
 import Input from "./Input";
 import Error from "./Error";
 
-import "../CSS/LandingPage/StarsBackground.css";
-import "../CSS/LandingPage/LandingPage.css";
+import "../CSS/StarsBackground.css";
+import "../CSS/LandingPage.css";
 
 const LandingPage = ({ onLogin }) => {
   const username = useInput("");

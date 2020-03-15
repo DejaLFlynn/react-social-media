@@ -1,3 +1,16 @@
+*,
+*::before,
+*::after{box-sizing:border-box;}
+a{text-decoration:underline; color:inherit; cursor:pointer;}
+figure{margin:0;}
+input::-moz-focus-inner {border:0; padding:0; margin:0;}
+ul, ol, dd, li {margin:0; padding:0; list-style:none;}
+h1, h2, h3, h4, h5, h6{margin:0; font-size:inherit; font-weight:inherit;}
+p{margin:0;}
+cite {font-style:normal;}
+fieldset{border-width:0; padding:0; margin:0;}
+/* CSS Reset code provided by Elad Shechter */
+
 .navBarComponent {
     background: linear-gradient(317deg, #ffe739, #e41b80, #36e8df);
     background-size: 600% 600%;
@@ -41,7 +54,7 @@
     width: 100%;
     font-size: 150px;
     line-height: 150px;
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-family: "potra";
@@ -58,7 +71,86 @@
     grid-area: nav;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
+.navButton{
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: transparent;
+    background-image: url("./Images/ClickLips.png");
+    background-size: 4em;
+    -webkit-filter: drop-shadow(1px 1px 0 white)
+        drop-shadow(-1px -1px 0 white);
+    filter: drop-shadow(1px 1px 0 white) 
+        drop-shadow(-1px -1px 0 white);
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 35px;
+    font-weight: bold;
+    color: #00ddd6;
+    font-family: "potra";
+    min-height: 3em;
+    min-width: 5em;
+    text-shadow:
+    -1px -1px 0 black,  
+    1px -1px 0 black,
+    -1px -1px 0 black,
+    1px -1px 0 black;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.search {
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    line-height: 2em;
+    text-align: center;
+    border-radius: 4px;
+    color: hotpink;
+    background: white;
+    font-weight: bold
+}
+
+.search:focus{
+    outline: none;
+    border:solid 3px blueviolet
+}
+
+.uploadButton {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: transparent;
+    background-image: url("./Images/NeonLips.gif");
+    background-size: 3.8em;
+    -webkit-filter: drop-shadow(1px 1px 0 white)
+        drop-shadow(-1px -1px 0 white);
+    filter: drop-shadow(1px 1px 0 white) 
+        drop-shadow(-1px -1px 0 white);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    font-size: 35px;
+    font-weight: bold;
+    color: #00ddd6;
+    font-family: "potra";
+    min-height: 3em;
+    min-width: 5em;
+    text-shadow:
+    -1px -1px 0 black,  
+    1px -1px 0 black,
+    -1px -1px 0 black,
+    1px -1px 0 black;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
