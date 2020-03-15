@@ -169,9 +169,3 @@ fieldset{border-width:0; padding:0; margin:0;}
     outline:none;
     opacity:0.75;
 }
-
-.navButton:active {
-    outline:none;
-    opacity:0.75;
-}
-
