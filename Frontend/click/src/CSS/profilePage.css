@@ -16,7 +16,7 @@ fieldset{border-width:0; padding:0; margin:0;
   font-family: 'potra';
   margin: 2%;
   background: white;
-  background-image: url("../Images/BlackAlternatingTile.png");
+  background-image: url("./Images/BlackAlternatingTile.png");
   background-repeat: repeat;
   background-size: 60%;
     display: grid;

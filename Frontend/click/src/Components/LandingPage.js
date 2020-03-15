@@ -5,9 +5,11 @@ import { useInput } from "../Utilities/CustomHooks";
 import Image from "./Image";
 import Input from "./Input";
 import Error from "./Error";
+import ClickModal from "./Modal"
+import SignUpPage from "./SignUpPage"
 
-import "../CSS/LandingPage/StarsBackground.css";
-import "../CSS/LandingPage/LandingPage.css";
+import "../CSS/StarsBackground.css";
+import "../CSS/LandingPage.css";
 
 const LandingPage = ({ onLogin }) => {
   const username = useInput("");
@@ -15,6 +17,8 @@ const LandingPage = ({ onLogin }) => {
   const [error, setError] = useState("");
   const [image, setImage] = useState("");
   const [totalVotes, settotalVotes] = useState("");
+
+  const [modalIsOpen,setIsOpen] = useState(false)
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -49,6 +53,14 @@ const LandingPage = ({ onLogin }) => {
   useEffect(() => {
     getTopPic();
   }, []);
+
+  const openModal = () =>  {
+    setIsOpen(true);
+  }
+
+  const closeModal = () => {
+    setIsOpen(false);
+  }
 
   return (
     <>
@@ -90,20 +102,26 @@ const LandingPage = ({ onLogin }) => {
 
               <div>
                 <button className="signInBtn" type="submit">
-                  Sign In
+                  SIGN IN
                 </button>
               </div>
             </form>
 
-            <div>
-              {error ? <Error className="Error" message={error} /> : null}
+
+            <div className="signUpLink" onClick={openModal}>
+              <p className="signUpLink">
+                SIGN UP
+              </p>
             </div>
 
-            <div className="signUpLink">
-              <Link to={"/SignUp"} className="signUpLink">
-                Sign Up
-              </Link>
+            <div className="modalParentContainer">
+            <ClickModal className="modal" modalIsOpen={modalIsOpen} modalClose={closeModal}>
+                <SignUpPage modalClose={closeModal}/>
+                <div>{error ? <Error className="Error" message={error} /> : null}</div>
+            </ClickModal>
             </div>
+           
+
           </div>
         </div>
       </div>

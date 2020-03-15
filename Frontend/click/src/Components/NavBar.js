@@ -55,13 +55,13 @@ const NavBar = () => {
             
             <div className="navBar">
 
-            { NavButton ? <NavLink to={"/Home"}><button onClick={handleNavButton}>HOME</button></NavLink> : <NavLink to={"/Profile"}><button onClick={handleNavButton}>Profile</button></NavLink> }
+            { NavButton ? <NavLink to={"/Home"}><button className="navButton toggleButton" onClick={handleNavButton}>HOME</button></NavLink> : <NavLink to={"/Profile"}><button className="navButton toggleButton"  onClick={handleNavButton}>PROFILE</button></NavLink> }
             
-            <form onSubmit={handleOnSubmit}>
-                <Input placeholder={"Search Hashtags"} input={input}/>
+            <form className="search" onSubmit={handleOnSubmit}>
+                <Input className={"search"}placeholder={"Search Hashtags"} input={input}/>
             </form>
             
-            <button onClick={openModal}>Click</button>
+            <button className="navButton uploadButton" onClick={openModal}>Upload</button>
             
             <ClickModal className="modal" modalIsOpen={modalIsOpen} modalClose={closeModal}>
                 <ImageUpload modalClose={closeModal}/>
