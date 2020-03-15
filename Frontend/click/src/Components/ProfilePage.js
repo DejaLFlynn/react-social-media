@@ -45,9 +45,9 @@ let userPics = images.map(pic => {
     );
   });
 
-  let picTotalVotes = totalVotes.map(vote => {
-  return <p key={vote.id}>Total Votes: {vote.total_votes}</p>
-  })
+//   let picTotalVotes = totalVotes.map(vote => {
+//   return <p key={vote.id}>Total Votes: {vote.total_votes}</p>
+//   })
 
     return (
    
@@ -65,7 +65,7 @@ let userPics = images.map(pic => {
 
         <div className="list">{userPics}</div>
         
-        <div className="totalPics">{picTotalVotes}</div>
+        {/* <div className="totalPics">{picTotalVotes}</div> */}
         
         </div>
         
