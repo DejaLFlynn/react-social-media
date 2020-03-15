@@ -30,24 +30,22 @@ const Profile = () => {
     }catch(error){
         setImages([])
     }
-}
-useEffect(()=>{
-    getImages()
-    getUserProfile()
-}, [])
+    }
 
-let userPics = images.map(pic => {
-    return (
-      <div className="listOfPicsContainer" key={pic.id}>
-        <Image className="listPic" image={pic.picture} />
-        
-      </div>
-    );
-  });
+    useEffect(()=>{
+        getImages()
+        getUserProfile()
+    }, [])
 
-//   let picTotalVotes = totalVotes.map(vote => {
-//   return <p key={vote.id}>Total Votes: {vote.total_votes}</p>
-//   })
+    let userPics = images.map(pic => {
+        return (
+        <div className="userGridImageContainer" key={pic.id}>
+            <Image className="userGridImage" image={pic.picture} />
+            <p>CLICKS: {pic.total_votes}</p>
+        </div>
+        );
+    });
+
 
     return (
    
@@ -57,15 +55,13 @@ let userPics = images.map(pic => {
         <div className="username">
             {username}
         </div>
-        <div>
-            <Image image={users} className={"image"}/>
+        <div className='profilePicContainer'>
+            <Image image={users} className={"profilePic"}/>
         </div>
         
         </div>
 
-        <div className="list">{userPics}</div>
-        
-        {/* <div className="totalPics">{picTotalVotes}</div> */}
+        <div className="userImageGrid">{userPics}</div>
         
         </div>
         
