@@ -22,22 +22,34 @@ const SignUpPage = ({ onLogin, modalClose }) => {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    // event.target.image.value = null;
     try {
-      let res = await axios.post("http://localhost:4000/users", {
+      const formData = new FormData();
+      formData.append("image", image);
+      const config = {
+        headers: {
+          "content-type": "multipart/form-data"
+        }
+      };
+      let res = await axios.post(
+        "http://localhost:4000/upload",
+        formData,
+        config
+      );
+      debugger;
+      let imageUrl = res.data.imageUrl;
+      let newUser = await axios.post("/users", {
         email: email.value,
         fullname: fullname.value,
         username: username.value,
         age: age.value,
-        profile_pic: profile_pic.value
+        profile_pic: imageUrl
       });
-      let profileUrl = res.data.payload[""];
 
-      if (res) {
+      if (newUser) {
         sessionStorage.setItem("username", username.value);
         sessionStorage.setItem("id", res.data.payload.id);
-        onLogin();
         modalClose();
+        onLogin();
       }
     } catch (error) {
       setError("Invalid Input: Username and/or Email Exists");
@@ -94,7 +106,7 @@ const SignUpPage = ({ onLogin, modalClose }) => {
               Upload Profile Pic:
               <input
                 className="uploadImage"
-                type="file"
+                type={"file"}
                 name={"profilePic"}
                 onChange={event => handleUpload(event)}
               />
