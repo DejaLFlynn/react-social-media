@@ -20,6 +20,7 @@
     border-radius: 5px;
     color:blueviolet;
     font-weight: bold;
+    text-align: center;
 }
 
 .uploadForm:hover {
@@ -42,7 +43,7 @@
 .input {
     width: 100%;
     border: none;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 2em;
     text-align: center;
     border-radius: 4px;
@@ -53,22 +54,24 @@
 }
 
 .uploadImage {
+    width: 75%;
     text-align: center;
+    font-size: 16px;
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(255,255,255,0.75)
+    background-color: rgba(255, 255, 255, 0.9)
 
 }
 
 
 .submitButton {
     width: 75%;
-    background-color: rgba(255,255,255,0.75);
+    background-color: transparent;
     text-decoration: none;
     text-align: center;
-    display: flex;
+    display: inline-block;
     font-size: 30px;
     font-weight: bold;
     color: hotpink;
@@ -95,13 +98,17 @@
     border: dashed 3px blueviolet
 }
 
-.signUpButton:hover{
+.submitButton:hover{
     color: blueviolet
 }
 
 .submit {
+    width: 75%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    background-color: rgba(255,255,255,0.75)
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.75);
 }
