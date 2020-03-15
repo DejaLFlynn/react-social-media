@@ -5,4 +5,6 @@ imageVotes.post("/", addVote);
 
 imageVotes.get("/", topVotedImages)
 
+// imageVotes.get("/:id", topVotedImagesByUser)
+
 module.exports = imageVotes;
