@@ -5,16 +5,17 @@ import axios from "axios";
 import "../CSS/SignUpPage.css";
 import Input from "./Input";
 
-const SignUpPage = ({ onLogin, modalClose }) => {
+const SignUpPage = ({onLogin, modalClose }) => {
   const username = useInput("");
   const email = useInput("");
   const fullname = useInput("");
   const age = useInput("");
-  const profile_pic = useInput("");
+  const profile_pic = useState("");
 
   const [image, setImage] = useState(null);
 
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
+
 
   const handleUpload = event => {
     setImage(event.target.files[0]);
@@ -35,9 +36,8 @@ const SignUpPage = ({ onLogin, modalClose }) => {
         formData,
         config
       );
-      debugger;
       let imageUrl = res.data.imageUrl;
-      let newUser = await axios.post("/users", {
+      let newUser = await axios.post("http://localhost:4000/users", {
         email: email.value,
         fullname: fullname.value,
         username: username.value,
@@ -47,8 +47,8 @@ const SignUpPage = ({ onLogin, modalClose }) => {
 
       if (newUser) {
         sessionStorage.setItem("username", username.value);
-        sessionStorage.setItem("id", res.data.payload.id);
-        modalClose();
+        sessionStorage.setItem("id", newUser.data.payload.id);
+        modalClose()
         onLogin();
       }
     } catch (error) {
@@ -118,7 +118,7 @@ const SignUpPage = ({ onLogin, modalClose }) => {
           </button>
         </form>
 
-        <div>{!error ? <Error message={error} /> : null}</div>
+        <div>{ !error ? <Error message={error} /> : null}</div>
       </div>
     </>
   );

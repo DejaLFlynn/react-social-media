@@ -20,9 +20,9 @@ const LandingPage = ({ onLogin }) => {
 
   const [modalIsOpen,setIsOpen] = useState(false)
 
-  const Login = () => {
-    onLogin()
-  }
+  // const Login = () => {
+  //   onLogin()
+  // }
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -65,6 +65,8 @@ const LandingPage = ({ onLogin }) => {
   const closeModal = () => {
     setIsOpen(false);
   }
+
+
 
   return (
     <>
@@ -120,9 +122,9 @@ const LandingPage = ({ onLogin }) => {
             </div>
 
             <div className="modalParentContainer">
-            <ClickModal className="modal" modalIsOpen={modalIsOpen} modalClose={closeModal}>
-                <SignUpPage modalClose={closeModal} onLogin={Login}/>
-                <div>{error ? <Error className="Error" message={error} /> : null}</div>
+            <ClickModal className="modal" modalIsOpen={modalIsOpen} modalClose={closeModal} onLogin={onLogin}>
+                <SignUpPage modalClose={closeModal} onLogin={onLogin}/>
+                {/* <div>{!error ? <Error className="Error" message={error} /> : null}</div> */}
             </ClickModal>
             </div>
            
