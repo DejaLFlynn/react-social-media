@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Modal from 'react-modal';
+import "../CSS/Modal.css"
 
 const customStyles = {
     content : {
@@ -8,7 +9,7 @@ const customStyles = {
       right                 : 'auto',
       bottom                : 'auto',
       marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
+      transform             : 'translate(-50%, -50%)',
     }
   };
  
@@ -22,14 +23,16 @@ const customStyles = {
    
    
       return (
-        <div>
+        <div className='modalContainer'>
           
           <Modal
+            style={customStyles}
             isOpen={modalIsOpen}
             onAfterOpen={afterOpenModal}
             onRequestClose={modalClose}
-            style={customStyles}
-            contentLabel="Example Modal"
+            contentLabel="Modal"
+            className='modal'
+            overlayClassName='overlay'
           >
    
             {children}

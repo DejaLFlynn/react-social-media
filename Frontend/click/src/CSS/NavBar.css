@@ -160,12 +160,15 @@ fieldset{border-width:0; padding:0; margin:0;}
     margin: 0;
 }
 
-.navButton:focus {
-    outline:none;
-    opacity:0.75;
+.navButton:hover {
+    outline: none;
+    opacity: 0.75;
 }
 
-.navButton:hover {
-    outline:none;
-    opacity:0.75;
+.navButton:focus {
+    outline: none
+}
+
+.navButton:active {
+    outline:none
 }

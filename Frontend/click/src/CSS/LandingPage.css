@@ -117,7 +117,7 @@ fieldset {
 }
 
 .popularImageContainer {
-  z-index: 2;
+  z-index: 1;
   grid-area: popularPic;
   display: flex;
   align-items: center;
@@ -167,7 +167,7 @@ fieldset {
   flex-direction: column;
   color: hotpink;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 25px;
   border: 10px solid rgba(173, 255, 47, 0);
   border-radius: 5px;
   box-shadow: 0px 0px 10px 10px #00ddd6, 0px 0px 30px 20px hotpink,
@@ -187,22 +187,26 @@ fieldset {
   background-color: rgb(173, 255, 47);
   line-height: 1.5em;
   color: black;
-  font-size: 20px;
+  font-size: 25px;
   border: none;
   border-radius: 5px;
   width: 100%;
   font-weight: bold;
+  margin: 5% 0 5% 0;
 }
 .signInBtn:hover {
   background-color: rgb(242, 24, 202);
+  border: dashed 5px rgb(173, 255, 47);
   color: white;
+  cursor: pointer;
 }
 .signUpLink {
   margin-top: 10%;
-  font-size: 25px;
+  font-size: 30px;
   color: #00ddd6;
   text-decoration: none;
   font-family: potra;
+  cursor: pointer
 }
 .signUpLink:hover {
   color: orange;
@@ -213,6 +217,7 @@ fieldset {
 }
 
 .userInputs {
+  margin: 5% 0 5% 0;
   width: 100%;
   font-size: 20px;
   color: white;
@@ -226,12 +231,12 @@ fieldset {
 
 .userInputs:hover {
   outline: none;
-  border: 5px solid hotpink;
+  border: 5px dashed hotpink;
 }
 
 .userInputs:focus {
   outline: none;
-  border: 5px solid blueviolet;
+  border: 5px dashed blueviolet;
 }
 
 .Error {
