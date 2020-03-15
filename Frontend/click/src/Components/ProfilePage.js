@@ -37,39 +37,30 @@ useEffect(()=>{
     getUserProfile()
 }, [])
 
-// let userPics = images.map(pic => {
-//     return <Image image={pic.picture} key={pic.id} />;
-//   });
-  let userPics = images.map(pic =>{
-    return <li className="listOfPics" key={pic.id}><Image image={pic.picture}/> 
-    </li>
-})
+let userPics = images.map(pic => {
+    return (
+      <div className="listOfPicsContainer" key={pic.id}>
+        <Image className="listPic" image={pic.picture} />
+        
+      </div>
+    );
+  });
+
   let picTotalVotes = totalVotes.map(vote => {
   return <p key={vote.id}>Total Votes: {vote.total_votes}</p>
   })
 
     return (
    
-        <>
+        
         <div className="Profile">
-        <div className="userProfile">
-            <img src={users} alt={""}  className="profilePic"/>
-            <p>Hello {username}!!!</p>
+        <div className="list">{userPics}</div>
+    <div className="totalPics">{picTotalVotes}</div>
         </div>
-       
-        <div className="userPics" >
-        {picTotalVotes}
-       <ul className="list">
-        Previous Voted pictures
-        {userPics}
-           </ul> 
-        </div> 
-        </div>
-        </>
+        
     )
 }
 
 export default Profile
 
 
-// dejaflynn@pursuit.org
