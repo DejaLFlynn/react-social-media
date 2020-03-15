@@ -70,7 +70,7 @@ const findMaxVotes = async (req, res) => {
 
 // const topVotedImagesByUser = async (req, res) => {
 //     try {
-//         let topImages = await db.any("SELECT p.picture, COUNT (v.picture_id) AS total_clicks FROM pictures p JOIN votes v ON v.picture_id = p.id JOIN users u ON u.id = p.user_id GROUP BY p.picture, u.id HAVING u.id = $1  ORDER BY total_clicks DESC ,LIMIT 10", req.params.id);
+//         let topImages = await db.any("SELECT p.picture, COUNT (v.picture_id) AS total_clicks FROM pictures p JOIN votes v ON v.picture_id = p.id JOIN users u ON u.id = p.user_id GROUP BY p.picture, u.id HAVING u.id = $1  ORDER BY total_clicks DESC LIMIT 10", req.params.id);
 //         res.status(200).json({
 //             status: "Success",
 //             message: "The 10 images by user",

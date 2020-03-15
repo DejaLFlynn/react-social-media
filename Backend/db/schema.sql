@@ -45,22 +45,53 @@ INSERT INTO users (fullname, username, email, age, profile_pic)
 
 INSERT INTO pictures (user_id, picture)
    VALUES 
-   (1, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-768x549.jpg'),
-   (1, 'https://i.ytimg.com/vi/bzZEH_5OuIs/maxresdefault.jpg'),
+   (1, 'https://media3.giphy.com/media/I6nz63jvjod44/giphy.gif'),
+   (1, 'https://media3.giphy.com/media/wW95fEq09hOI8/giphy.gif'),
    (2, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-1126205831.jpg'),
    (2, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-599966138-767x514.jpg'),
    (3, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-171582169.jpg'),
+   -- 6
    (3, 'https://www.rd.com/wp-content/uploads/2019/09/GettyImages-1058317014-760x506.jpg'),
-   (4, 'https://digitalsynopsis.com/wp-content/uploads/2017/12/funny-agency-life-creative-designer-copywriter-memes-1.jpg'),
+   (4, 'https://media2.giphy.com/media/K0ZZjkjYKiD7y/giphy.gif'),
    (4, 'https://ichef.bbci.co.uk/news/976/cpsprodpb/D6E6/production/_109241055_mediaitem109241054.jpg'),
-   (2, 'https://www.sheknows.com/wp-content/uploads/2018/08/psyyqkxg08z2lousgib9.gif');
+   (2, 'https://www.sheknows.com/wp-content/uploads/2018/08/psyyqkxg08z2lousgib9.gif'),
+   (4, 'https://media.giphy.com/media/BcFuckdngP0ly/giphy.gif'),
+   -- 11
+   (4, 'https://quotationsquotes.com/wp-content/uploads/2015/09/Top-15-Very-Funny-Cat-GIFs-most-shared.gif'),
+   (4, 'https://media.giphy.com/media/h5ucthNBNJID3A1e0W/giphy.gif'),
+   (1, 'https://media0.giphy.com/media/1GrsfWBDiTN60/giphy.gif'),
+   (1, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   (1, 'https://thumbs.gfycat.com/AgreeableDaringHalcyon-size_restricted.gif');
+   -- 16
+   -- (1, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (1, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (1, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (1, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (1, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- 21
+   -- (2, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (2, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (2, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (2, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (2, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- --26
+   -- (2, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (3, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (3, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (3, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (3, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- --31
+   -- (3, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (3, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (3, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
+   -- (3, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif');
 
 
 INSERT INTO hashtags (picture_id, body)
    VALUES 
-   (1, 'possesdog'),
-   (1, 'funny'),
-   (2, 'crazydog'),
+   (1, 'whatchaulooking@'),
+   (1, 'possessdog'),
+   (2, 'funny'),
    (3, 'funnysquirrel'),
    (3, 'funny'),
    (3, 'OMG'),
@@ -78,7 +109,23 @@ INSERT INTO hashtags (picture_id, body)
    (8, 'thematrix'),
    (9, 'election'),
    (9, 'biden'),
-   (9, 'fail');
+   (9, 'fail'),
+   (10, 'itshandled'),
+   (11, 'whogotthebestshimmy?'),
+   (12, 'meafterthesocialmediaproject?'),
+   (13, 'itsmybirthday'),
+   (13, 'vacayfromthekids'),
+   (12, 'afterfixedabug'),
+   (14, 'touchmymoneyagain'),
+   (14, 'staywoke...dontplaywitmymoney'),
+   (15, 'jumponit');
+   -- (14, 'staywoke...dontplaywitmymoney'),
+   -- (14, 'staywoke...dontplaywitmymoney'),
+   -- (14, 'staywoke...dontplaywitmymoney'),
+   -- (14, 'staywoke...dontplaywitmymoney'),
+   -- (14, 'staywoke...dontplaywitmymoney'),
+   -- (14, 'staywoke...dontplaywitmymoney'),
+   -- (14, 'staywoke...dontplaywitmymoney');
 
 INSERT INTO votes (voter_id, picture_id)
    VALUES 
@@ -96,5 +143,19 @@ INSERT INTO votes (voter_id, picture_id)
    (1, 9),
    (2, 9),
    (3, 9),
-   (4, 9);
+   (4, 9),
+   (4, 11),
+   (4, 8),
+   (2, 9),
+   (2, 11),
+   (3, 11),
+   (2, 11),
+   (3, 12),
+   (2, 12),
+   (1, 12),
+   (1, 15),
+   (3, 14),
+   (2, 14),
+   (4, 14),
+   (4, 12);
 
