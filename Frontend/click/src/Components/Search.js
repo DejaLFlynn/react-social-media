@@ -3,18 +3,25 @@ import Error from "./Error"
 import { useInput } from "../Utilities/CustomHooks"
 import Input from './Input'
 import axios from "axios"
+import "../CSS/HomePage.css"
+
 const Search = async()=>{
+    const searched = useInput("")
     const [hashtags, setHashtags] = useState([])
-    const getHashtagsUrl = async ()=>{
-        const hashtagsUrl = `http://localhost:4000/hashtags`
-        try{
-            let res = await axios.get(hashtagsUrl)
-            
-            setHashtags(res.data.payload)
-        }catch(error){
-           setHashtags([]) 
-        }
+
+ const handleSubmit =(event)=>{
+    event.preventDefault()
+    try{
+        let res = await axios.get(`http://localhost:4000/hashtags`)
+        debugger
+        setHashtags(res.data.payload)
+
+    }catch(error){
+
     }
+}
+
+    
     useEffect(() => {
         getHashtagsUrl();
       }, []);
@@ -28,7 +35,9 @@ const Search = async()=>{
       return(
           <div className="Search">
 
-        <div className="hashtags">{displayHashtagPics}</div>
+        <div className="hashtags">{displayHashtagPics}
+        <form className="hashtagform" onSubmit={handleSubmit}></form>
+        </div>
           </div>
       )
 
