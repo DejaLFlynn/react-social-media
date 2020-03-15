@@ -51,8 +51,8 @@ const Home = () => {
 
   let displayAllTenImages = topTenPics.map(pic => {
     return (
-      <div className="topTen" key={pic.picture + pic.total_votes}>
-        <Image className="randPic" image={pic.picture} />
+      <div className="topTenContainer" key={pic.picture + pic.total_votes}>
+        <Image className="topTenPic" image={pic.picture} />
         <p>Total Clicks: {pic.total_votes}</p>
       </div>
     );
