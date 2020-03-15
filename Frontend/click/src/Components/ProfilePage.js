@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from "axios"
 import Image from "./Image"
-import '../CSS/LandingPage/profilePage.css'
+import '../CSS/profilePage.css'
 
 
 const Profile = () => {
