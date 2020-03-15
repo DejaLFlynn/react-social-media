@@ -50,7 +50,7 @@
     color: hotpink;
     background: white;
     font-weight: bold;
-    border: 2px solid hotpink
+    border: 2px solid hotpink;
 }
 
 .uploadImage {
@@ -62,10 +62,21 @@
     align-items: center;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.9)
-
 }
 
+.uploadImage:hover{
+    border: dashed 3px blueviolet
+}
 
+.input:focus{
+    outline: none;
+    border: dashed 3px blueviolet
+}
+
+.input:hover{
+    outline: none;
+    border: dashed 3px blueviolet
+}
 .submitButton {
     width: 75%;
     background-color: transparent;
@@ -88,18 +99,13 @@
     margin: 0;
 }
 
-.input:focus{
-    outline: none;
-    border: dashed 3px blueviolet
-}
-
-.input:hover{
-    outline: none;
-    border: dashed 3px blueviolet
-}
-
 .submitButton:hover{
-    color: blueviolet
+    color: lime;
+}
+
+
+.submit:hover {
+    border: dashed 3px blueviolet
 }
 
 .submit {
@@ -108,6 +114,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: 2px solid hotpink;
     text-align: center;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.75);
