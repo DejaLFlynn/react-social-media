@@ -74,7 +74,19 @@ INSERT INTO pictures (user_id, picture)
    (3, 'https://media.tenor.com/images/fe8512ae693714059981ec0b1787154b/tenor.gif'),
    (3, 'https://media.tenor.com/images/b29b981a9c6b4276fffbad6a1765db17/tenor.gif'),
    (3, 'https://media1.giphy.com/media/mynNuzIEbN2uc/giphy.gif?cid=790b76114df278983e0f1fab33a5aae35714ed01f5c2602d&rid=giphy.gif'),
-   (3, 'https://media0.giphy.com/media/l0MYJwgLnbx1oV0nm/source.gif');
+   (3, 'https://media0.giphy.com/media/l0MYJwgLnbx1oV0nm/source.gif'),
+   (3, 'https://i.chzbgr.com/full/7865115648/hBAE80B5D/'),
+   (3, 'https://data.whicdn.com/images/273860278/original.gif'),
+   (3, 'https://teamjimmyjoe.com/wp-content/uploads/2019/04/funny-dog-pull-tongue-long.gif'),
+   (3, 'https://media0.giphy.com/media/t3cSAjaraQ51e/source.gif'),
+   -- 35
+   (4, 'https://media.giphy.com/media/E2gJ9kNjCgL6g/giphy.gif'),
+   (4, 'https://media1.tenor.com/images/55ac9b82bac23bdbded058da3ec472ca/tenor.gif?itemid=5271841'),
+   (4, 'https://media3.giphy.com/media/K3PNsKxcNQ6rK/giphy.gif'),
+   (4, 'https://media.giphy.com/media/kBZBlLVlfECvOQAVno/giphy.gif'),
+   (4, 'https://thumbs.gfycat.com/CautiousJaggedGreendarnerdragonfly-small.gif'),
+   (4, 'https://media0.giphy.com/media/IcvIY7Yv3yD6M/source.gif'),
+   (4, 'https://media2.giphy.com/media/12uXi1GXBibALC/giphy.gif');
 
 
 INSERT INTO hashtags (picture_id, body)
@@ -133,7 +145,23 @@ INSERT INTO hashtags (picture_id, body)
    (28, 'PSA...DONTDODRUGS'),
    (29, 'whosleepsthathard'),
    (30, 'nycrushhouratitsfinest'),
-   (30, 'peoplerushingforaseat');
+   (31, 'machineiscuter'),
+   (31, 'nowletsgetmachinetocookandclean'),
+   (31, 'notimpressed'),
+   (32, 'planmynextmove'),
+   (32, 'thisischessnotcheckers'),
+   (33, 'freaky'),
+   (34, 'OMG'),
+   (34, 'whensomeonepassgas'),
+   (35, 'noexcuses'),
+   (36, 'girlbye'),
+   (36, 'toallmyhaters'),
+   (37, 'hewillalwaysgettheclick'),
+   (38, 'clapyourhandsifyouhearmyvoice'),
+   (39, 'nocomment'),
+   (40, 'mewaitingfordinnertobeserve'),
+   (40, 'starving'),
+   (41, 'whenImhappyorsad');
 
 INSERT INTO votes (voter_id, picture_id)
    VALUES 
@@ -155,7 +183,11 @@ INSERT INTO votes (voter_id, picture_id)
    (4, 11),
    (4, 8),
    (2, 9),
+   (1, 9),
    (2, 11),
+   (3, 9),
+   (3, 10),
+   (1, 9),
    (3, 11),
    (2, 11),
    (3, 12),
@@ -208,5 +240,24 @@ INSERT INTO votes (voter_id, picture_id)
    (4, 29),
    (1, 30),
    (2, 30),
-   (3, 30);
+   (3, 30),
+   (1, 31),
+   (2, 32),
+   (1, 33),
+   (4, 33),
+   (1, 34),
+   (4, 34),
+   (1, 35),
+   (2, 35),
+   (3, 36),
+   (2, 36),
+   (1, 37),
+   (3, 37),
+   (2, 39),
+   (3, 39),
+   (1, 40),
+   (2, 40),
+   (3, 40),
+   (1, 41),
+   (3, 41);
 
