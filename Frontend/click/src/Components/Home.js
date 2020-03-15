@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ImageUpload from "./ImageUpload";
 import Image from "./Image";
 import axios from "axios";
 import "../CSS/HomePage.css";
@@ -36,10 +35,22 @@ const Home = () => {
     getTopTenPics();
   }, []);
 
+  const handleVote = async (id) => {
+    try {
+      await axios.post(`http://localhost:4000/images/votes`, {
+        voter_id: sessionStorage.getItem('id'),
+        picture_id: id
+      })
+      getRandPics();
+    } catch (err) {
+      setRandPics([])
+    }
+  }
+
   let displayRandPics = randPics.map(pic => {
     return (
-      <div className="imageContainer" key={pic.id + pic.picture}>
-        <Image className="randPic" image={pic.picture} />
+      <div className="imageContainer" key={pic.id + pic.picture} onClick={()=> handleVote(pic.id)}>
+        <Image className="randPic" image={pic.picture}/>
         {pic.user_hashtags.map((tag, idx) => (
           <p className="tags" key={idx + tag}>
             #{tag}
