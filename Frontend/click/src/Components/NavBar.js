@@ -63,7 +63,7 @@ const NavBar = () => {
             
             <button onClick={openModal}>Click</button>
             
-            <ClickModal className="modal" modalIsOpen={modalIsOpen}>
+            <ClickModal className="modal" modalIsOpen={modalIsOpen} modalClose={closeModal}>
                 <ImageUpload modalClose={closeModal}/>
             </ClickModal>
             </div>
