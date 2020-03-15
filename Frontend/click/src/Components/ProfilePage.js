@@ -52,15 +52,28 @@ const Profile = () => {
         <div className="Profile">
 
         <div className="profileHeaderPic">
-        <div className="username">
-            {username}
-        </div>
         <div className='profilePicContainer'>
             <Image image={users} className={"profilePic"}/>
         </div>
-        
+        <div className="username">
+            {username}
+        </div>
         </div>
 
+        <div className="profileHeaderClicks">
+            <div className='profileHeaderClicksContainer'>
+                <div>
+                <p>DAILY COUNT: 51</p>
+                </div>
+                <div>
+                <p>MONTHLY COUNT: 143</p>
+                </div>
+                <div>
+                <p> LIFETIME COUNT: 1423</p>
+                </div>
+            </div>
+        </div>
+        
         <div className="userImageGrid">{userPics}</div>
         
         </div>
