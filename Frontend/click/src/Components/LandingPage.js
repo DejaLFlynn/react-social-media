@@ -107,6 +107,7 @@ const LandingPage = ({ onLogin }) => {
               </div>
             </form>
 
+            {error ? <Error className="Error" message={error} /> : null}
 
             <div className="signUpLink" onClick={openModal}>
               <p className="signUpLink">

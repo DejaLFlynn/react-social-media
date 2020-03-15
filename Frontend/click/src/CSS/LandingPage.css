@@ -217,7 +217,6 @@ fieldset {
 }
 .signUpLink:hover {
   color: orange;
-  text-decoration: underline;
 }
 .signInBtn:focus {
   outline: none;
