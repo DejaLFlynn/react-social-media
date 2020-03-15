@@ -10,6 +10,8 @@ p{margin:0;}
 cite {font-style:normal;}
 fieldset{border-width:0; padding:0; margin:0;
 }
+
+
 .Profile{
   height: 100vh;
   width: 100%;
@@ -19,8 +21,8 @@ fieldset{border-width:0; padding:0; margin:0;
   background-image: url("./Images/BlackAlternatingTile.png");
   background-repeat: repeat;
   background-size: 60%;
-    display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 3fr;
   grid-template-areas:
   "ProfileHeader"
