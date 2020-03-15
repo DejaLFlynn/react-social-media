@@ -44,6 +44,7 @@ fieldset{border-width:0; padding:0; margin:0;
     1px -1px 0 black,
     1px 1px 0 white;
   font-weight:bold;
+  padding-right: 5%;
 }
 
 .profilePicContainer{
@@ -118,7 +119,7 @@ fieldset{border-width:0; padding:0; margin:0;
   justify-content: center;
   width: 200px;
   height: 200px;
-  color: hotpink;
+  color: lime;
   font-weight: bold;
   border: 10px solid rgba(173, 255, 47, 0);
   border-radius: 5px;
