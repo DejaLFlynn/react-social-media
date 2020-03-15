@@ -47,9 +47,11 @@ fieldset {
 }
 /* CSS Reset code provided by Elad Shechter */
 .Home {
-  /* background-image: url("https://trello-attachments.s3.amazonaws.com/5e5da6657b62812c17696666/5e6024ca256cca1ea18aa5cd/f6206d34565e8891715101b0e5af7c52/GlossyBlackTileSmall.jpg");
-  background-repeat: repeat; */
-  background: black;
+  margin: 2%;
+  background: white;
+  background-image: url("./Images/BlackAlternatingTile.png");
+  background-repeat: repeat;
+  background-size: 60%;
   height: 100vh;
   width: 100%;
   display: grid;
