@@ -45,16 +45,18 @@ const ImageUpload = ({modalClose}) => {
         <div className="uploadContainer">
             <form className="uploadForm" onSubmit={handleSubmit}>
                 <div className="uploadImage">
-                    <input className="uploadImage type={"file"} name={"image"} onChange={(event) => handleUpload(event)}/>
+                    <p>Choose Your Comedic Gold</p>
+                    <input className="uploadImage" type="file" name="image" onChange={(event) => handleUpload(event)}/>
                 </div>
-                <div>
-                    <Input className="hashtagSearch" type={"text"} name={'hashtag'} placeholder={'Enter Hashtags Separated by Commas'} input={hashtag}/>
+                <div className="inputContainer">
+                    <Input className="input" type={"text"} name={'hashtag'} placeholder={'Enter Hashtags Separated by Commas'} input={hashtag}/>
                 </div>
-                <div>
-                    <button className="submitButton" type='submit'>MAKE US CRY LAUGHING</button>
+                <div className="submit">
+                    <button className="submitButton" type='submit'>UPLOAD</button>
+                    <p>MAKE US CRY LAUGHING</p>
                 </div>
             </form>
-        </div?
+        </div>
     )       
 }
 
