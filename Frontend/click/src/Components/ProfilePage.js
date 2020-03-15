@@ -6,7 +6,7 @@ import '../CSS/profilePage.css'
 
 const Profile = () => {
     const [images, setImages]=useState([]);
-    const [totalVotes, setTotalVotes]=useState([]);
+    // const [totalVotes, setTotalVotes]=useState([]);
     const [username, setUsername] =useState("");
     const [users, setUsers]=useState("");
 
@@ -27,7 +27,6 @@ const Profile = () => {
     try{
         let res = await axios.get(userImages)
         setImages(res.data.payload)
-        setTotalVotes(res.data.payload)
     }catch(error){
         setImages([])
     }
