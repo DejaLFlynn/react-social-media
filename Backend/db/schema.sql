@@ -61,7 +61,7 @@ INSERT INTO pictures (user_id, picture)
    (4, 'https://media.giphy.com/media/h5ucthNBNJID3A1e0W/giphy.gif'),
    (1, 'https://media0.giphy.com/media/1GrsfWBDiTN60/giphy.gif'),
    (1, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
-   (1, 'https://thumbs.gfycat.com/AgreeableDaringHalcyon-size_restricted.gif'),
+   (1, 'https://thumbs.gfycat.com/AgreeableDaringHalcyon-size_restricted.gif');
    -- 16
    -- (1, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
    -- (1, 'https://media0.giphy.com/media/ND6xkVPaj8tHO/giphy.gif'),
@@ -118,7 +118,7 @@ INSERT INTO hashtags (picture_id, body)
    (12, 'afterfixedabug'),
    (14, 'touchmymoneyagain'),
    (14, 'staywoke...dontplaywitmymoney'),
-   (15, 'jumponit'),
+   (15, 'jumponit');
    -- (14, 'staywoke...dontplaywitmymoney'),
    -- (14, 'staywoke...dontplaywitmymoney'),
    -- (14, 'staywoke...dontplaywitmymoney'),
