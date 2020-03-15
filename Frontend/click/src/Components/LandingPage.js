@@ -20,6 +20,10 @@ const LandingPage = ({ onLogin }) => {
 
   const [modalIsOpen,setIsOpen] = useState(false)
 
+  const Login = () => {
+    onLogin()
+  }
+
   const handleSubmit = async event => {
     event.preventDefault();
     try {
@@ -117,7 +121,7 @@ const LandingPage = ({ onLogin }) => {
 
             <div className="modalParentContainer">
             <ClickModal className="modal" modalIsOpen={modalIsOpen} modalClose={closeModal}>
-                <SignUpPage modalClose={closeModal}/>
+                <SignUpPage modalClose={closeModal} onLogin={Login}/>
                 <div>{error ? <Error className="Error" message={error} /> : null}</div>
             </ClickModal>
             </div>
