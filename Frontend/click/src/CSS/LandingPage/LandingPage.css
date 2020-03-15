@@ -93,6 +93,7 @@ fieldset {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 250px;
+  line-height: 250px;
   opacity: 75%
 }
 

@@ -1,4 +1,4 @@
-.navBarContainer {
+.navBarComponent {
     background: linear-gradient(317deg, #ffe739, #e41b80, #36e8df);
     background-size: 600% 600%;
     height: 150px;
@@ -24,9 +24,41 @@
     100%{background-position:0% 10%}
 }
 
-nav{
+.navBarContainer{
     background-image: url("./Images/BlackAlternatingTile.png");
     background-repeat: repeat;
     background-size: 10%;
     height: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "brand nav"
 }
+
+.brand {
+    grid-area: brand;
+    width: 100%;
+    font-size: 150px;
+    line-height: 150px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    font-family: "potra";
+    padding: 0;
+    margin: 0;
+    text-shadow: -4px -4px 0 white;
+    background: linear-gradient(270deg, rgba(255,231,57,1) 1%, rgba(228,27,128,1) 70%, rgba(67,101,162,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navBar {
+    grid-area: nav;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

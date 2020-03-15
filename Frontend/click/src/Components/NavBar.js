@@ -47,18 +47,26 @@ const NavBar = () => {
 
     
     return (
+        <nav className="navBarComponent">
         <nav className="navBarContainer">
-        <nav className="nav">
+            <div className="brand">
+                <p>CLICK</p>
+            </div>
+            
+            <div className="navBar">
+
             { NavButton ? <NavLink to={"/Home"}><button onClick={handleNavButton}>HOME</button></NavLink> : <NavLink to={"/Profile"}><button onClick={handleNavButton}>Profile</button></NavLink> }
+            
             <form onSubmit={handleOnSubmit}>
                 <Input placeholder={"Search Hashtags"} input={input}/>
             </form>
             
             <button onClick={openModal}>Click</button>
             
-            <ClickModal modalIsOpen={modalIsOpen}>
+            <ClickModal className="modal" modalIsOpen={modalIsOpen}>
                 <ImageUpload modalClose={closeModal}/>
             </ClickModal>
+            </div>
 
         </nav>
         </nav>
