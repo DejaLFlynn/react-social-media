@@ -79,7 +79,7 @@ const createImage = async (req, res) => {
 const getImagesByUser = async (req, res, next) => {
   try {
     let images = await db.any(
-      "SELECT p.id, p.picture, COUNT(v.picture_id) AS total_votes FROM pictures p JOIN users u ON u.id = p.user_id JOIN votes v ON v.picture_id = p.id GROUP BY p.picture, p.id, u.id HAVING u.id = 1",
+      "SELECT p.id, p.picture, COUNT(v.picture_id) AS total_votes FROM pictures p JOIN users u ON u.id = p.user_id JOIN votes v ON v.picture_id = p.id GROUP BY p.picture, p.id, u.id HAVING u.id = $1",
       req.params.id
     );
     res.status(200).json({
