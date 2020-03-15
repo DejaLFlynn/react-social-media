@@ -11,13 +11,14 @@ cite {font-style:normal;}
 fieldset{border-width:0; padding:0; margin:0;
 }
 .Profile{
-    height: 100vh;
-    width: 100%;
-    font-family: neon;
-   background-color: black;
-    /* background-image: url('../../Public/Images/saw-img-background-png-pattern-4-transparent.png'); */
-    /* background-repeat: repeat;
-    background-size: 10%; */
+  height: 100vh;
+  width: 100%;
+  font-family: 'potra';
+  margin: 2%;
+  background: white;
+  background-image: url("../Images/BlackAlternatingTile.png");
+  background-repeat: repeat;
+  background-size: 60%;
     display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 3fr;
@@ -27,8 +28,8 @@ fieldset{border-width:0; padding:0; margin:0;
 
 }
 .userProfile{
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     color: hotpink;
 
     
@@ -48,27 +49,6 @@ fieldset{border-width:0; padding:0; margin:0;
 
 
 }
-.list {
-    display: flex;
-    height: 450px;
-    width: 450px;
-  }
-  .listOfPicsContainer {
-    display: flex;
-    flex-direction: column;
-    grid-area: imageContainer;
-    border: 10px solid rgba(173, 255, 47, 0);
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 10px #00ddd6, 0px 0px 30px 20px hotpink,
-      inset 0px 0px 10px 10px #00ddd6, inset 0px 0px 30px 20px hotpink;
-    /* align-items: center; */
-  }
-  .listPic {
-    height: 400px;
-    width: 400px;
-    border-radius: 5px;
-    border: none;
-  }
 
 .userProfile{
     width: 50px;
@@ -81,3 +61,12 @@ fieldset{border-width:0; padding:0; margin:0;
   font-size: 18px;
 }
 
+.userPics{
+    width: 100px;
+    height: 100px;
+    color: hotpink;
+}
+/* .list{
+    width: 100px;
+    height: 150px;
+} */
