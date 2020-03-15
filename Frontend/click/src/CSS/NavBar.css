@@ -75,7 +75,7 @@ fieldset{border-width:0; padding:0; margin:0;}
     align-items: center;
 }
 
-.navButton{
+.toggleButton{
     text-decoration: none;
     justify-content: center;
     align-items: center;
@@ -123,6 +123,11 @@ fieldset{border-width:0; padding:0; margin:0;}
     border:solid 3px blueviolet
 }
 
+.search:hover{
+    outline: none;
+    border:solid 3px blueviolet
+}
+
 .uploadButton {
     text-decoration: none;
     display: flex;
@@ -154,3 +159,19 @@ fieldset{border-width:0; padding:0; margin:0;}
     padding: 0;
     margin: 0;
 }
+
+.navButton:focus {
+    outline:none;
+    opacity:0.75;
+}
+
+.navButton:hover {
+    outline:none;
+    opacity:0.75;
+}
+
+.navButton:active {
+    outline:none;
+    opacity:0.75;
+}
+
