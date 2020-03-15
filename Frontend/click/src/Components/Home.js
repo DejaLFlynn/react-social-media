@@ -49,7 +49,7 @@ const Home = () => {
 
   let displayRandPics = randPics.map(pic => {
     return (
-      <div className="imageContainer" key={pic.id + pic.picture} onClick={()=> handleVote(pic.id)}>
+      <div className="randImageContainer" key={pic.id + pic.picture} onClick={()=> handleVote(pic.id)}>
         <Image className="randPic" image={pic.picture}/>
         {pic.user_hashtags.map((tag, idx) => (
           <p className="tags" key={idx + tag}>
@@ -71,8 +71,8 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <div className="randomPics">{displayRandPics}</div>
-      <div className="topTen">{displayAllTenImages}</div>
+      <div className="Randomizer">{displayRandPics}</div>
+      <div className="TopImages">{displayAllTenImages}</div>
     </div>
   );
 };
