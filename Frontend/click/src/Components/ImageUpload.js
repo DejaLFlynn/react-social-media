@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useInput } from '../Utilities/CustomHooks'
 import axios from 'axios'
 import Input from './Input'
-
+import '../CSS/ImageUpload.css'
 
 const ImageUpload = ({modalClose}) => {
     
@@ -42,17 +42,19 @@ const ImageUpload = ({modalClose}) => {
      }
 
     return(
-        <form className="" onSubmit={handleSubmit}>
-            <div className="">
-                <input type={"file"} name={"image"} onChange={(event) => handleUpload(event)}/>
-            </div>
-            <div>
-                <Input type={"text"} name={'hashtag'} placeholder={'Enter Hashtags Separated by Commas'} input={hashtag}/>
-            </div>
-            <div>
-                <button type='submit'>MAKE US CRY LAUGHING</button>
-            </div>
-        </form>
+        <div className="uploadContainer">
+            <form className="uploadForm" onSubmit={handleSubmit}>
+                <div className="uploadImage">
+                    <input className="uploadImage type={"file"} name={"image"} onChange={(event) => handleUpload(event)}/>
+                </div>
+                <div>
+                    <Input className="hashtagSearch" type={"text"} name={'hashtag'} placeholder={'Enter Hashtags Separated by Commas'} input={hashtag}/>
+                </div>
+                <div>
+                    <button className="submitButton" type='submit'>MAKE US CRY LAUGHING</button>
+                </div>
+            </form>
+        </div?
     )       
 }
 
