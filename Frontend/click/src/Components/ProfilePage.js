@@ -6,7 +6,7 @@ import '../CSS/profilePage.css'
 
 const Profile = () => {
     const [images, setImages]=useState([]);
-    const [totalVotes, setTotalVotes]=useState([]);
+    // const [totalVotes, setTotalVotes]=useState([]);
     const [username, setUsername] =useState("");
     const [users, setUsers]=useState("");
 
@@ -27,7 +27,6 @@ const Profile = () => {
     try{
         let res = await axios.get(userImages)
         setImages(res.data.payload)
-        setTotalVotes(res.data.payload)
     }catch(error){
         setImages([])
     }
@@ -46,9 +45,9 @@ let userPics = images.map(pic => {
     );
   });
 
-  let picTotalVotes = totalVotes.map(vote => {
-  return <p key={vote.id}>Total Votes: {vote.total_votes}</p>
-  })
+//   let picTotalVotes = totalVotes.map(vote => {
+//   return <p key={vote.id}>Total Votes: {vote.total_votes}</p>
+//   })
 
     return (
    
@@ -66,7 +65,7 @@ let userPics = images.map(pic => {
 
         <div className="list">{userPics}</div>
         
-        <div className="totalPics">{picTotalVotes}</div>
+        {/* <div className="totalPics">{picTotalVotes}</div> */}
         
         </div>
         
