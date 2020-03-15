@@ -20,7 +20,7 @@ const LandingPage = ({ onLogin }) => {
 
   const [modalIsOpen,setIsOpen] = useState(false)
 
-  const onLogin = () => {
+  const Login = () => {
     onLogin()
   }
 
@@ -121,7 +121,7 @@ const LandingPage = ({ onLogin }) => {
 
             <div className="modalParentContainer">
             <ClickModal className="modal" modalIsOpen={modalIsOpen} modalClose={closeModal}>
-                <SignUpPage modalClose={closeModal} onLogin={onLogin}/>
+                <SignUpPage modalClose={closeModal} onLogin={Login}/>
                 <div>{error ? <Error className="Error" message={error} /> : null}</div>
             </ClickModal>
             </div>
