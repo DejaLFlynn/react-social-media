@@ -49,7 +49,7 @@ const ImageUpload = ({modalClose}) => {
                     <input className="uploadImage" type="file" name="image" onChange={(event) => handleUpload(event)}/>
                 </div>
                 <div className="inputContainer">
-                    <Input className="input" type={"text"} name={'hashtag'} placeholder={'Enter Hashtags Separated by Commas'} input={hashtag}/>
+                    <Input className="input" type={"text"} name={'hashtag'} placeholder={'Enter Hashtags w/ Spaces'} input={hashtag}/>
                 </div>
                 <div className="submit">
                     <button className="submitButton" type='submit'>UPLOAD</button>
