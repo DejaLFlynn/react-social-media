@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import axios from 'axios'
 import Input from './Input'
 import ClickModal from './Modal'
-import ImageUpload from './ImageUpload'
+import ImageUpload from './ImageUploadModal'
 import {useInput} from '../Utilities/CustomHooks'
 import "../CSS/NavBar.css"
 
