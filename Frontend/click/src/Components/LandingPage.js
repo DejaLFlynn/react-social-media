@@ -6,7 +6,7 @@ import Image from "./Image";
 import Input from "./Input";
 import Error from "./Error";
 import ClickModal from "./Modal"
-import SignUpPage from "./SignUpPage"
+import SignUpPage from "./SignUpModal"
 
 import "../CSS/StarsBackground.css";
 import "../CSS/LandingPage.css";

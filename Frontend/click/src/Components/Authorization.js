@@ -6,7 +6,7 @@ import NavBar from './NavBar'
 import LandingPage from './LandingPage'
 import Home from './Home'
 import Profile from './ProfilePage'
-import SignUp from './SignUpPage'
+import SignUp from './SignUpModal'
 
 const Authorization = () => {
     
